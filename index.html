@@ -9,97 +9,43 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#050508;
-  --bg2:#0c0c14;
-  --bg3:#12121e;
-  --border:#1e1e30;
-  --border2:#2a2a40;
-  --purple:#8b5cf6;
-  --purple2:#a78bfa;
-  --purple-glow:rgba(139,92,246,0.35);
-  --cyan:#06b6d4;
-  --cyan-glow:rgba(6,182,212,0.3);
-  --green:#10b981;
-  --green-glow:rgba(16,185,129,0.3);
-  --red:#ef4444;
-  --red-glow:rgba(239,68,68,0.3);
-  --yellow:#f59e0b;
-  --text:#f1f0ff;
-  --text2:#9090b0;
-  --text3:#5a5a7a;
+  --bg:#050508;--bg2:#0c0c14;--bg3:#12121e;--border:#1e1e30;--border2:#2a2a40;
+  --purple:#8b5cf6;--purple2:#a78bfa;--purple-glow:rgba(139,92,246,0.35);
+  --cyan:#06b6d4;--cyan-glow:rgba(6,182,212,0.3);
+  --green:#10b981;--green-glow:rgba(16,185,129,0.3);
+  --red:#ef4444;--red-glow:rgba(239,68,68,0.3);
+  --yellow:#f59e0b;--text:#f1f0ff;--text2:#9090b0;--text3:#5a5a7a;
 }
-
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track{background:var(--bg2)}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
-
 .glow-purple{color:var(--purple2);text-shadow:0 0 20px var(--purple-glow),0 0 40px rgba(139,92,246,0.2)}
-.glow-cyan{color:#67e8f9;text-shadow:0 0 20px var(--cyan-glow),0 0 40px rgba(6,182,212,0.15)}
-
-/* ── LOGIN ── */
-#login{
-  display:flex;align-items:center;justify-content:center;
-  min-height:100vh;
-  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,92,246,0.08) 0%,transparent 70%);
-}
-.login-card{
-  width:380px;padding:44px;
-  background:var(--bg2);border:1px solid var(--border);border-radius:20px;
-  position:relative;overflow:hidden;
-}
-.login-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--purple),transparent);
-}
+#login{display:flex;align-items:center;justify-content:center;min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,92,246,0.08) 0%,transparent 70%)}
+.login-card{width:380px;padding:44px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;position:relative;overflow:hidden}
+.login-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--purple),transparent)}
 .login-logo{font-size:32px;font-weight:900;letter-spacing:6px;margin-bottom:6px;text-align:center}
 .login-sub{font-size:13px;color:var(--text2);text-align:center;margin-bottom:36px;letter-spacing:1px}
 .field-label{font-size:11px;letter-spacing:2px;color:var(--text3);margin-bottom:8px;font-weight:600}
-.inp{
-  width:100%;padding:12px 16px;background:var(--bg3);border:1px solid var(--border2);
-  color:var(--text);border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;
-  outline:none;transition:border-color .2s,box-shadow .2s;margin-bottom:16px;
-}
+.inp{width:100%;padding:12px 16px;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;outline:none;transition:border-color .2s,box-shadow .2s;margin-bottom:16px}
 .inp:focus{border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-glow)}
-.btn-login{
-  width:100%;padding:13px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;
-  letter-spacing:2px;background:var(--purple);color:#fff;border:none;border-radius:10px;
-  cursor:pointer;transition:all .2s;position:relative;overflow:hidden;
-}
-.btn-login::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.1),transparent)}
+.btn-login{width:100%;padding:13px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;background:var(--purple);color:#fff;border:none;border-radius:10px;cursor:pointer;transition:all .2s}
 .btn-login:hover{background:#7c3aed;box-shadow:0 0 24px var(--purple-glow)}
 .login-err{font-size:13px;color:var(--red);min-height:20px;text-align:center;margin-top:10px}
-
-/* ── DASHBOARD ── */
 #dashboard{display:none;min-height:100vh}
 .layout{display:flex;min-height:100vh}
-
-/* ── SIDEBAR ── */
-.sidebar{
-  width:220px;min-height:100vh;background:var(--bg2);border-right:1px solid var(--border);
-  padding:24px 16px;display:flex;flex-direction:column;
-  position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0;
-}
+.sidebar{width:220px;min-height:100vh;background:var(--bg2);border-right:1px solid var(--border);padding:24px 16px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0}
 .sidebar-logo{font-size:18px;font-weight:900;letter-spacing:4px;padding:0 8px 28px;border-bottom:1px solid var(--border);margin-bottom:20px}
 .nav-label{font-size:10px;letter-spacing:3px;color:var(--text3);font-weight:600;padding:0 8px;margin:16px 0 8px}
-.nav-item{
-  display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;
-  cursor:pointer;font-size:14px;font-weight:500;color:var(--text2);transition:all .15s;margin-bottom:2px;
-}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;cursor:pointer;font-size:14px;font-weight:500;color:var(--text2);transition:all .15s;margin-bottom:2px}
 .nav-item:hover{background:var(--bg3);color:var(--text)}
 .nav-item.active{background:rgba(139,92,246,0.15);color:var(--purple2);font-weight:600}
-.nav-item.active .nav-icon{filter:drop-shadow(0 0 6px var(--purple))}
 .nav-icon{font-size:16px;width:20px;text-align:center}
-.sidebar-footer{margin-top:auto;padding-top:20px;border-top:1px solid var(--border);font-size:12px;color:var(--text3);padding:20px 8px 0}
-
-/* ── MAIN ── */
+.sidebar-footer{margin-top:auto;border-top:1px solid var(--border);font-size:12px;color:var(--text3);padding:20px 8px 0}
 .main-content{flex:1;padding:32px;overflow-x:hidden}
-.page{display:none}
-.page.active{display:block}
+.page{display:none}.page.active{display:block}
 .page-title{font-size:26px;font-weight:800;margin-bottom:4px;letter-spacing:-0.5px}
 .page-sub{font-size:14px;color:var(--text2);margin-bottom:28px}
-
-/* ── STATS ── */
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
 .stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px 22px;position:relative;overflow:hidden}
 .stat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;opacity:0.6}
@@ -109,68 +55,34 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .stat-card.s-red::after{background:linear-gradient(90deg,transparent,var(--red),transparent)}
 .stat-label{font-size:11px;letter-spacing:2px;color:var(--text3);font-weight:600;margin-bottom:10px}
 .stat-num{font-size:30px;font-weight:800;font-family:'JetBrains Mono',monospace}
-.s-purple .stat-num{color:var(--purple2);text-shadow:0 0 20px var(--purple-glow)}
-.s-cyan   .stat-num{color:#67e8f9;text-shadow:0 0 20px var(--cyan-glow)}
-.s-green  .stat-num{color:#34d399;text-shadow:0 0 20px var(--green-glow)}
-.s-red    .stat-num{color:#f87171;text-shadow:0 0 20px var(--red-glow)}
-
-/* ── CARD ── */
+.s-purple .stat-num{color:var(--purple2)}.s-cyan .stat-num{color:#67e8f9}.s-green .stat-num{color:#34d399}.s-red .stat-num{color:#f87171}
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px}
 .card-title{font-size:15px;font-weight:700;margin-bottom:18px;letter-spacing:0.5px;display:flex;align-items:center;gap:8px}
 .card-title span{color:var(--text2);font-weight:400;font-size:13px}
-
-/* ── FORM ── */
 .form-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:end}
 .field{display:flex;flex-direction:column;gap:6px}
 .field-lbl{font-size:11px;letter-spacing:2px;color:var(--text3);font-weight:600}
-.inp-sm{
-  padding:10px 14px;background:var(--bg3);border:1px solid var(--border2);
-  color:var(--text);border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;
-  outline:none;transition:border-color .2s,box-shadow .2s;width:100%;
-}
+.inp-sm{padding:10px 14px;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
 .inp-sm:focus{border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-glow)}
 select.inp-sm{cursor:pointer}
 select.inp-sm option{background:var(--bg3);color:var(--text)}
 .btn{padding:10px 20px;border:none;border-radius:10px;cursor:pointer;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;transition:all .15s}
 .btn:active{transform:scale(.97)}
-.btn-purple{background:var(--purple);color:#fff}
-.btn-purple:hover{background:#7c3aed;box-shadow:0 0 18px var(--purple-glow)}
-.btn-red{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3)}
-.btn-red:hover{background:rgba(239,68,68,0.25)}
-.btn-ghost{background:var(--bg3);color:var(--text2);border:1px solid var(--border2)}
-.btn-ghost:hover{background:var(--border);color:var(--text)}
+.btn-purple{background:var(--purple);color:#fff}.btn-purple:hover{background:#7c3aed;box-shadow:0 0 18px var(--purple-glow)}
+.btn-red{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3)}.btn-red:hover{background:rgba(239,68,68,0.25)}
+.btn-ghost{background:var(--bg3);color:var(--text2);border:1px solid var(--border2)}.btn-ghost:hover{background:var(--border);color:var(--text)}
 .btn-sm{padding:6px 14px;font-size:12px}
 .btn-generate{padding:10px 24px;align-self:flex-end}
-
-/* ── RESULT BOX ── */
-.result-box{
-  display:none;margin-top:14px;padding:14px 16px;
-  background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.3);border-radius:10px;
-}
+.result-box{display:none;margin-top:14px;padding:14px 16px;background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.3);border-radius:10px}
 .result-label{font-size:11px;letter-spacing:2px;color:var(--purple2);margin-bottom:8px;font-weight:600}
 .result-row{display:flex;gap:8px;align-items:center}
-.result-url{
-  flex:1;padding:9px 13px;background:var(--bg3);border:1px solid var(--border2);
-  color:#67e8f9;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:12px;
-  outline:none;cursor:text;
-}
-
-/* ── FILTER BAR ── */
+.result-url{flex:1;padding:9px 13px;background:var(--bg3);border:1px solid var(--border2);color:#67e8f9;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:12px;outline:none;cursor:text}
 .filter-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
-.filter-btn{
-  padding:7px 16px;border-radius:20px;border:1px solid var(--border2);
-  background:transparent;color:var(--text2);font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;
-}
+.filter-btn{padding:7px 16px;border-radius:20px;border:1px solid var(--border2);background:transparent;color:var(--text2);font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}
 .filter-btn:hover{border-color:var(--border);color:var(--text)}
 .filter-btn.active{border-color:var(--purple);color:var(--purple2);background:rgba(139,92,246,0.1)}
-.search-inp{
-  flex:1;min-width:160px;max-width:260px;padding:8px 14px;
-  background:var(--bg3);border:1px solid var(--border2);color:var(--text);
-  border-radius:10px;font-family:'Outfit',sans-serif;font-size:13px;outline:none;transition:border-color .2s;
-}
+.search-inp{flex:1;min-width:160px;max-width:260px;padding:8px 14px;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:10px;font-family:'Outfit',sans-serif;font-size:13px;outline:none;transition:border-color .2s}
 .search-inp:focus{border-color:var(--purple)}
-
-/* ── TABLE ── */
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border)}
 table{width:100%;border-collapse:collapse;min-width:750px}
 thead{background:var(--bg3)}
@@ -180,211 +92,102 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 .tr-leak td:first-child{border-left:2px solid var(--red)}
 .tr-safe td:first-child{border-left:2px solid var(--green)}
 .tr-unused td:first-child{border-left:2px solid var(--border2)}
-
-/* ── BADGES ── */
 .badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1px}
 .badge-leak{background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.3);animation:badge-blink 1.2s infinite}
 .badge-safe{background:rgba(16,185,129,0.12);color:#34d399;border:1px solid rgba(16,185,129,0.3)}
 .badge-unused{background:rgba(90,90,122,0.15);color:var(--text3);border:1px solid var(--border2)}
 @keyframes badge-blink{0%,100%{opacity:1}50%{opacity:.5}}
 .mono{font-family:'JetBrains Mono',monospace;font-size:12px}
-.copy-btn{
-  padding:4px 10px;background:none;border:1px solid var(--border2);
-  color:var(--text3);border-radius:6px;cursor:pointer;font-size:11px;transition:all .15s;font-family:'Outfit',sans-serif;
-}
+.copy-btn{padding:4px 10px;background:none;border:1px solid var(--border2);color:var(--text3);border-radius:6px;cursor:pointer;font-size:11px;transition:all .15s;font-family:'Outfit',sans-serif}
 .copy-btn:hover{border-color:var(--cyan);color:#67e8f9}
-
-/* ── FILE UPLOAD ── */
-.upload-zone{
-  border:2px dashed var(--border2);border-radius:14px;padding:40px;
-  text-align:center;cursor:pointer;transition:all .2s;background:var(--bg3);position:relative;
-}
-.upload-zone:hover,.upload-zone.drag{border-color:var(--purple);background:rgba(139,92,246,0.05)}
-.upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.upload-icon{font-size:36px;margin-bottom:12px;opacity:.5}
-.upload-title{font-size:15px;font-weight:600;margin-bottom:6px}
-.upload-sub{font-size:13px;color:var(--text2)}
-.file-list{margin-top:16px;display:flex;flex-direction:column;gap:8px}
-.file-item{
-  display:flex;align-items:center;gap:12px;padding:12px 14px;
-  background:var(--bg3);border:1px solid var(--border);border-radius:10px;
-}
+.file-item{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;margin-bottom:8px}
 .file-icon{font-size:20px}
-.file-name{flex:1;font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.file-size{font-size:12px;color:var(--text3);white-space:nowrap}
-.file-remove{background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;padding:2px 6px;border-radius:4px;transition:all .15s}
+.file-name{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:80px;max-width:140px}
+.file-remove{background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;padding:2px 6px;border-radius:4px;transition:all .15s;flex-shrink:0}
 .file-remove:hover{color:var(--red);background:rgba(239,68,68,0.1)}
-
-/* ── ACTIVE FILE PILL ── */
-.active-file-pill{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:6px 14px;background:rgba(16,185,129,0.1);
-  border:1px solid rgba(16,185,129,0.3);border-radius:8px;
-  font-size:12px;color:#34d399;font-weight:600;margin-bottom:16px;
-}
-
-/* ── REALTIME DOT ── */
-.rt-dot{
-  width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px;
-  animation:rt-pulse 2s infinite;box-shadow:0 0 6px var(--green-glow);
-}
+.active-file-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:8px;font-size:12px;color:#34d399;font-weight:600;margin-bottom:16px}
+.rt-dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px;animation:rt-pulse 2s infinite}
 @keyframes rt-pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
-/* ── TOAST ── */
-#toast{
-  position:fixed;bottom:24px;right:24px;padding:13px 22px;
-  background:var(--purple);color:#fff;border-radius:10px;font-size:14px;
-  font-weight:600;opacity:0;transition:opacity .3s;z-index:9999;
-  box-shadow:0 8px 24px var(--purple-glow);pointer-events:none;
-}
+#toast{position:fixed;bottom:24px;right:24px;padding:13px 22px;background:var(--purple);color:#fff;border-radius:10px;font-size:14px;font-weight:600;opacity:0;transition:opacity .3s;z-index:9999;box-shadow:0 8px 24px var(--purple-glow);pointer-events:none}
 #toast.show{opacity:1}
-
-/* ── MODAL ── */
-.modal-bg{
-  display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);
-  z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(4px);
-}
+#toast.err{background:var(--red)}
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
 .modal-bg.open{display:flex}
-.modal{
-  background:var(--bg2);border:1px solid var(--border);border-radius:18px;
-  padding:28px 32px;width:460px;max-width:95vw;position:relative;
-}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:28px 32px;width:460px;max-width:95vw;position:relative}
 .modal-top{font-size:16px;font-weight:700;letter-spacing:1px;margin-bottom:6px;color:var(--cyan)}
 .modal-sub{font-size:13px;color:var(--text2);margin-bottom:20px}
 .modal-btns{display:flex;gap:10px;justify-content:flex-end;margin-top:20px}
-
-/* ── IP LIST ── */
-.ip-item{
-  display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;margin-bottom:6px;
-  background:var(--bg3);border:1px solid var(--border);font-size:13px;
-}
+.ip-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;margin-bottom:6px;background:var(--bg3);border:1px solid var(--border);font-size:13px}
 .ip-item.first{border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.05)}
 .ip-item.sus{border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.05)}
 .ip-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.ip-dot.g{background:var(--green);box-shadow:0 0 6px var(--green-glow)}
-.ip-dot.r{background:var(--red);box-shadow:0 0 6px var(--red-glow)}
-
-/* ── LINK VIEW (buyer page) ── */
-#link-view{
-  display:none;min-height:100vh;align-items:center;justify-content:center;
-  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,92,246,0.1) 0%,transparent 70%);
-  flex-direction:column;padding:40px 20px;
-}
-.buyer-card{
-  width:100%;max-width:480px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;
-  padding:40px;text-align:center;position:relative;overflow:hidden;
-}
-.buyer-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--purple),var(--cyan),transparent);
-}
+.ip-dot.g{background:var(--green)}.ip-dot.r{background:var(--red)}
+#link-view{display:none;min-height:100vh;align-items:center;justify-content:center;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,92,246,0.1) 0%,transparent 70%);flex-direction:column;padding:40px 20px}
+.buyer-card{width:100%;max-width:480px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:40px;text-align:center;position:relative;overflow:hidden}
+.buyer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--purple),var(--cyan),transparent)}
 .buyer-logo{font-size:22px;font-weight:900;letter-spacing:5px;margin-bottom:32px}
 .buyer-name{font-size:24px;font-weight:800;margin-bottom:8px}
 .buyer-sub{font-size:14px;color:var(--text2);margin-bottom:28px}
-.key-box{
-  background:var(--bg3);border:1px solid var(--border2);border-radius:12px;
-  padding:16px 24px;margin:0 auto 12px;display:inline-block;
-}
+.key-box{background:var(--bg3);border:1px solid var(--border2);border-radius:12px;padding:16px 24px;margin:0 auto 12px;display:inline-block}
 .key-text{font-family:'JetBrains Mono',monospace;font-size:16px;color:#67e8f9;letter-spacing:2px}
-.dl-btn{
-  display:inline-flex;align-items:center;gap:10px;padding:14px 32px;margin-top:20px;
-  background:var(--purple);color:#fff;border:none;border-radius:12px;
-  font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;
-  cursor:pointer;transition:all .2s;letter-spacing:1px;text-decoration:none;
-}
+.dl-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;margin-top:20px;background:var(--purple);color:#fff;border:none;border-radius:12px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:1px;text-decoration:none}
 .dl-btn:hover{background:#7c3aed;box-shadow:0 0 24px var(--purple-glow);transform:translateY(-1px)}
-.dl-btn-icon{font-size:18px}
 .buyer-footer{font-size:12px;color:var(--text3);margin-top:32px}
-
-/* ── SETTINGS ── */
 .settings-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border)}
 .settings-row:last-child{border-bottom:none}
 .settings-info{flex:1}
 .settings-title{font-size:14px;font-weight:600;margin-bottom:3px}
 .settings-desc{font-size:12px;color:var(--text2)}
-
-/* ── EMPTY ── */
-.empty-row td{text-align:center;padding:48px;color:var(--text3);font-size:14px}
-
-@media(max-width:900px){
-  .sidebar{display:none}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .form-row{grid-template-columns:1fr}
-}
+@media(max-width:900px){.sidebar{display:none}.stats-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- ════════════════════ LOGIN ════════════════════ -->
 <div id="login">
   <div class="login-card">
     <div class="login-logo glow-purple">SLCEP</div>
     <div class="login-sub">LINK DASHBOARD · ANTI LEAK</div>
     <div class="field-label">PASSWORD</div>
-    <input class="inp" type="password" id="login-pass" placeholder="Enter admin password"
-      onkeydown="if(event.key==='Enter')doLogin()">
+    <input class="inp" type="password" id="login-pass" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')doLogin()">
     <button class="btn-login" onclick="doLogin()">ACCESS DASHBOARD</button>
     <div class="login-err" id="login-err"></div>
   </div>
 </div>
 
-<!-- ════════════════════ DASHBOARD ════════════════════ -->
 <div id="dashboard">
   <div class="layout">
-
-    <!-- SIDEBAR -->
     <div class="sidebar">
       <div class="sidebar-logo glow-purple">SLCEP</div>
-
       <div class="nav-label">MAIN</div>
-      <div class="nav-item active" onclick="showPage('links',this)">
-        <span class="nav-icon">⬡</span> Links
-      </div>
-      <div class="nav-item" onclick="showPage('upload',this)">
-        <span class="nav-icon">⬆</span> Upload File
-      </div>
-      <div class="nav-item" onclick="showPage('settings',this)">
-        <span class="nav-icon">⚙</span> Settings
-      </div>
-
+      <div class="nav-item active" onclick="showPage('links',this)"><span class="nav-icon">⬡</span> Links</div>
+      <div class="nav-item" onclick="showPage('upload',this)"><span class="nav-icon">⬆</span> Upload File</div>
+      <div class="nav-item" onclick="showPage('settings',this)"><span class="nav-icon">⚙</span> Settings</div>
       <div class="sidebar-footer">
         <div><span class="rt-dot"></span> Realtime Active</div>
         <div style="margin-top:6px;font-size:11px">Made by @m0dzn_edit</div>
       </div>
     </div>
 
-    <!-- MAIN CONTENT -->
     <div class="main-content">
 
-      <!-- ── LINKS PAGE ── -->
+      <!-- LINKS PAGE -->
       <div class="page active" id="page-links">
         <div class="page-title">Link Manager</div>
         <div class="page-sub">Generate, track and detect leaked links in real time</div>
-
-        <!-- Stats -->
         <div class="stats-grid">
           <div class="stat-card s-purple"><div class="stat-label">TOTAL LINKS</div><div class="stat-num" id="st-total">0</div></div>
           <div class="stat-card s-cyan"><div class="stat-label">TOTAL VISITS</div><div class="stat-num" id="st-visits">0</div></div>
           <div class="stat-card s-red"><div class="stat-label">LEAKING</div><div class="stat-num" id="st-leaks">0</div></div>
           <div class="stat-card s-green"><div class="stat-label">SAFE</div><div class="stat-num" id="st-safe">0</div></div>
         </div>
-
-        <!-- Generate -->
         <div class="card">
           <div class="card-title">⬡ Generate Link <span>— create a protected download link for a customer</span></div>
-
-          <!-- Active file indicator -->
           <div id="active-file-bar" style="display:none;margin-bottom:16px">
-            <div class="active-file-pill">
-              <span>📎</span>
-              <span id="active-file-name">No file selected</span>
-              <span style="color:var(--text3);font-weight:400">will be attached</span>
-            </div>
+            <div class="active-file-pill"><span>📎</span><span id="active-file-name"></span><span style="color:var(--text3);font-weight:400">will be attached</span></div>
           </div>
           <div id="no-file-warn" style="display:none;margin-bottom:16px;padding:10px 14px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;font-size:13px;color:var(--yellow)">
             ⚠ No file uploaded yet. Upload a file first so buyers can download it.
           </div>
-
           <div class="form-row">
             <div class="field">
               <div class="field-lbl">CUSTOMER NAME</div>
@@ -396,13 +199,12 @@ tr:hover td{background:rgba(255,255,255,0.015)}
             </div>
             <div class="field">
               <div class="field-lbl">ATTACH FILE <span style="color:var(--text3);font-weight:400;letter-spacing:0">(optional)</span></div>
-              <select class="inp-sm" id="gen-file">
+              <select class="inp-sm" id="gen-file" onchange="updateActiveFileBanner()">
                 <option value="">— No file (link only) —</option>
               </select>
             </div>
             <button class="btn btn-purple btn-generate" onclick="generateLink()">+ GENERATE</button>
           </div>
-
           <div class="result-box" id="gen-result">
             <div class="result-label">GENERATED LINK</div>
             <div class="result-row">
@@ -411,8 +213,6 @@ tr:hover td{background:rgba(255,255,255,0.015)}
             </div>
           </div>
         </div>
-
-        <!-- Filter + Table -->
         <div class="filter-bar">
           <button class="filter-btn active" onclick="setFilter('all',this)">ALL</button>
           <button class="filter-btn" onclick="setFilter('safe',this)">SAFE</button>
@@ -420,29 +220,20 @@ tr:hover td{background:rgba(255,255,255,0.015)}
           <button class="filter-btn" onclick="setFilter('unused',this)">UNUSED</button>
           <input class="search-inp" id="search" placeholder="Search customer or key..." oninput="renderTable()">
         </div>
-
         <div class="table-wrap">
           <table>
-            <thead>
-              <tr>
-                <th>CUSTOMER</th><th>LINK</th><th>KEY</th>
-                <th>FILE</th><th>VISITS</th><th>STATUS</th><th>DATE</th><th>ACTIONS</th>
-              </tr>
-            </thead>
+            <thead><tr><th>CUSTOMER</th><th>LINK</th><th>KEY</th><th>FILE</th><th>VISITS</th><th>STATUS</th><th>DATE</th><th>ACTIONS</th></tr></thead>
             <tbody id="tbody"></tbody>
           </table>
         </div>
       </div>
 
-      <!-- ── UPLOAD PAGE ── -->
+      <!-- UPLOAD PAGE -->
       <div class="page" id="page-upload">
         <div class="page-title">File Upload</div>
-        <div class="page-sub">Upload your EXE or any file — it will appear as a download button on buyer link pages</div>
-
+        <div class="page-sub">Add a file URL — it will appear as a download button on buyer link pages</div>
         <div class="card">
-          <div class="card-title">⬆ Upload File <span>— paste a direct download URL for the file</span></div>
-
-          <!-- Quick upload form -->
+          <div class="card-title">⬆ Add File <span>— paste a direct download URL</span></div>
           <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;margin-bottom:20px">
             <div class="field">
               <div class="field-lbl">FILE NAME</div>
@@ -452,80 +243,54 @@ tr:hover td{background:rgba(255,255,255,0.015)}
               <div class="field-lbl">DIRECT DOWNLOAD URL</div>
               <input class="inp-sm" id="ul-url" type="text" placeholder="https://drive.google.com/...">
             </div>
-            <button class="btn btn-purple" onclick="manualAddFile()" style="white-space:nowrap">+ ADD FILE</button>
+            <button class="btn btn-purple" id="add-file-btn" onclick="manualAddFile()" style="white-space:nowrap">+ ADD FILE</button>
           </div>
-
           <div style="font-size:12px;color:var(--text3);padding:10px 14px;background:var(--bg3);border-radius:8px;border:1px solid var(--border);line-height:1.7">
             💡 <strong style="color:var(--text2)">How to get a direct download URL:</strong><br>
             • <strong style="color:var(--text2)">Google Drive:</strong> Share → Anyone with link → copy link<br>
             • <strong style="color:var(--text2)">MEGA:</strong> Right-click → Get link<br>
-            • <strong style="color:var(--text2)">MediaFire / GoFile:</strong> Upload and copy direct link<br>
-            The download button on buyer pages will link directly to this URL.
+            • <strong style="color:var(--text2)">MediaFire / GoFile:</strong> Upload and copy direct link
           </div>
         </div>
-
         <div class="card">
-          <div class="card-title">📁 Your Files <span>— click "Set Active" to use as default for new links</span></div>
-          <div id="uploaded-list">
-            <div style="color:var(--text3);font-size:14px;padding:10px 0">Loading files...</div>
-          </div>
+          <div class="card-title">📁 Your Files <span>— available to attach when generating links</span></div>
+          <div id="uploaded-list"><div style="color:var(--text3);font-size:14px;padding:10px 0">Loading files...</div></div>
         </div>
       </div>
 
-      <!-- ── SETTINGS PAGE ── -->
+      <!-- SETTINGS PAGE -->
       <div class="page" id="page-settings">
         <div class="page-title">Settings</div>
         <div class="page-sub">Configure your dashboard</div>
-
         <div class="card">
           <div class="card-title">⚙ Admin Config</div>
-
           <div class="settings-row">
-            <div class="settings-info">
-              <div class="settings-title">Admin Password</div>
-              <div class="settings-desc">Change your dashboard login password</div>
-            </div>
+            <div class="settings-info"><div class="settings-title">Admin Password</div><div class="settings-desc">Change your dashboard login password</div></div>
             <div style="display:flex;gap:8px">
               <input class="inp-sm" id="new-pass" type="password" placeholder="New password" style="width:180px">
               <button class="btn btn-purple btn-sm" onclick="savePass()">SAVE</button>
             </div>
           </div>
-
           <div class="settings-row">
-            <div class="settings-info">
-              <div class="settings-title">Firebase URL</div>
-              <div class="settings-desc">Your Realtime Database URL</div>
-            </div>
+            <div class="settings-info"><div class="settings-title">Firebase URL</div><div class="settings-desc">Your Realtime Database URL</div></div>
             <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text2)" id="fb-url-display"></div>
           </div>
-
           <div class="settings-row">
-            <div class="settings-info">
-              <div class="settings-title">Realtime Refresh</div>
-              <div class="settings-desc">Auto-refresh link data every 4 seconds</div>
-            </div>
+            <div class="settings-info"><div class="settings-title">Realtime Refresh</div><div class="settings-desc">Auto-refresh link data every 4 seconds</div></div>
             <div style="color:var(--green);font-size:13px;font-weight:600"><span class="rt-dot"></span>ACTIVE</div>
           </div>
-
           <div class="settings-row">
-            <div class="settings-info">
-              <div class="settings-title">Discord Server</div>
-              <div class="settings-desc">Link shown on buyer's ban screen for appeal</div>
-            </div>
+            <div class="settings-info"><div class="settings-title">Discord Server</div><div class="settings-desc">Link shown on buyer's ban screen for appeal</div></div>
             <div style="display:flex;gap:8px">
               <input class="inp-sm" id="discord-link" type="text" placeholder="https://discord.gg/..." style="width:220px">
               <button class="btn btn-purple btn-sm" onclick="saveDiscord()">SAVE</button>
             </div>
           </div>
         </div>
-
         <div class="card">
           <div class="card-title" style="color:var(--red)">⚠ Danger Zone</div>
           <div class="settings-row">
-            <div class="settings-info">
-              <div class="settings-title">Delete All Links</div>
-              <div class="settings-desc">Permanently remove all generated links</div>
-            </div>
+            <div class="settings-info"><div class="settings-title">Delete All Links</div><div class="settings-desc">Permanently remove all generated links</div></div>
             <button class="btn btn-red btn-sm" onclick="deleteAllLinks()">DELETE ALL</button>
           </div>
         </div>
@@ -535,7 +300,7 @@ tr:hover td{background:rgba(255,255,255,0.015)}
   </div>
 </div>
 
-<!-- ════════════════════ LINK VIEW (buyer) ════════════════════ -->
+<!-- BUYER PAGE -->
 <div id="link-view">
   <div class="buyer-card" id="buyer-card">
     <div class="buyer-logo glow-purple">SLCEP</div>
@@ -544,19 +309,15 @@ tr:hover td{background:rgba(255,255,255,0.015)}
   </div>
 </div>
 
-<!-- ── IP MODAL ── -->
+<!-- MODALS -->
 <div class="modal-bg" id="ip-modal">
   <div class="modal">
     <div class="modal-top">IP ADDRESSES</div>
     <div class="modal-sub">Visit history for this link</div>
     <div id="ip-content"></div>
-    <div class="modal-btns">
-      <button class="btn btn-ghost btn-sm" onclick="closeModal('ip-modal')">CLOSE</button>
-    </div>
+    <div class="modal-btns"><button class="btn btn-ghost btn-sm" onclick="closeModal('ip-modal')">CLOSE</button></div>
   </div>
 </div>
-
-<!-- ── DELETE MODAL ── -->
 <div class="modal-bg" id="del-modal">
   <div class="modal">
     <div class="modal-top">DELETE LINK</div>
@@ -571,22 +332,18 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 <div id="toast"></div>
 
 <script>
-// ── CONFIG ─────────────────────────────────────────────────────────────────
-const FB    = "https://slcep-cdfa4-default-rtdb.asia-southeast1.firebasedatabase.app";
-let PASS    = localStorage.getItem('slcep_pass') || "slcep2024";
-let DISCORD = localStorage.getItem('slcep_discord') || "https://discord.gg/yourserver";
+// ── CONFIG ──────────────────────────────────────────────────────────────────
+const FB       = "https://slcep-cdfa4-default-rtdb.asia-southeast1.firebasedatabase.app";
+const FB_TOKEN = "GmOV04gSggLWNx30ih1Xnu3O566ZYSHMUQ02Ms8B";
+let PASS       = localStorage.getItem('slcep_pass') || "slcep2024";
+let DISCORD    = localStorage.getItem('slcep_discord') || "https://discord.gg/yourserver";
 
-// ── STATE ──────────────────────────────────────────────────────────────────
-let links       = {};
-let _buyerKey   = '';
-let uploads     = {};
-let currentF    = 'all';
-let deleteId    = null;
+// ── STATE ───────────────────────────────────────────────────────────────────
+let links = {}, uploads = {}, _buyerKey = '', currentF = 'all', deleteId = null;
 
-// ── INIT ───────────────────────────────────────────────────────────────────
+// ── INIT ────────────────────────────────────────────────────────────────────
 window.onload = () => {
-  const p = new URLSearchParams(location.search);
-  const l = p.get('l');
+  const l = new URLSearchParams(location.search).get('l');
   if (l) {
     document.getElementById('login').style.display     = 'none';
     document.getElementById('link-view').style.display = 'flex';
@@ -598,7 +355,7 @@ window.onload = () => {
   document.getElementById('discord-link').value = DISCORD;
 };
 
-// ── LOGIN ──────────────────────────────────────────────────────────────────
+// ── LOGIN ───────────────────────────────────────────────────────────────────
 function doLogin() {
   const v = document.getElementById('login-pass').value;
   if (v === PASS) {
@@ -612,12 +369,11 @@ function doLogin() {
   }
 }
 
-// ── DASHBOARD ──────────────────────────────────────────────────────────────
 function startDashboard() {
   loadLinks();
   loadUploadedFiles();
   setInterval(loadLinks, 4000);
-  setInterval(loadUploadedFiles, 8000);
+  setInterval(loadUploadedFiles, 10000);
 }
 
 function showPage(name, el) {
@@ -627,194 +383,170 @@ function showPage(name, el) {
   el.classList.add('active');
 }
 
-// ── FIREBASE ───────────────────────────────────────────────────────────────
+// ── FIREBASE ─────────────────────────────────────────────────────────────────
+// All requests include ?auth=TOKEN to fix 401 Unauthorized errors
+function fbUrl(path) {
+  return `${FB}/${path}.json?auth=${FB_TOKEN}`;
+}
 async function fbGet(path) {
-  try { const r = await fetch(`${FB}/${path}.json`); return r.ok ? r.json() : null; }
+  try { const r = await fetch(fbUrl(path)); return r.ok ? r.json() : null; }
   catch { return null; }
 }
 async function fbSet(path, data) {
   try {
-    await fetch(`${FB}/${path}.json`, {
-      method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
-    });
-  } catch {}
+    const r = await fetch(fbUrl(path), { method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
+    if (!r.ok) { console.error('fbSet', r.status, await r.text()); return false; }
+    return true;
+  } catch(e) { console.error('fbSet', e); return false; }
 }
 async function fbPatch(path, data) {
   try {
-    await fetch(`${FB}/${path}.json`, {
-      method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
-    });
-  } catch {}
+    const r = await fetch(fbUrl(path), { method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
+    return r.ok;
+  } catch { return false; }
 }
 async function fbDelete(path) {
-  try { await fetch(`${FB}/${path}.json`, {method:'DELETE'}); } catch {}
+  try { const r = await fetch(fbUrl(path), { method:'DELETE' }); return r.ok; }
+  catch { return false; }
 }
 
-// ── LINKS ──────────────────────────────────────────────────────────────────
+// ── LINKS ───────────────────────────────────────────────────────────────────
 async function loadLinks() {
   const data = await fbGet('links');
   links = data || {};
   renderStats();
   renderTable();
 }
-
 function renderStats() {
-  const vals = Object.values(links);
-  document.getElementById('st-total').textContent  = vals.length;
-  document.getElementById('st-visits').textContent = vals.reduce((s,l)=>s+(l.visits||0),0);
-  document.getElementById('st-leaks').textContent  = vals.filter(l=>l.status==='leak').length;
-  document.getElementById('st-safe').textContent   = vals.filter(l=>l.status==='safe').length;
+  const v = Object.values(links);
+  document.getElementById('st-total').textContent  = v.length;
+  document.getElementById('st-visits').textContent = v.reduce((s,l) => s+(l.visits||0), 0);
+  document.getElementById('st-leaks').textContent  = v.filter(l => l.status==='leak').length;
+  document.getElementById('st-safe').textContent   = v.filter(l => l.status==='safe').length;
 }
-
 function setFilter(f, btn) {
   currentF = f;
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   renderTable();
 }
-
 function renderTable() {
-  const q  = (document.getElementById('search').value || '').toLowerCase();
+  const q = (document.getElementById('search').value||'').toLowerCase();
   let rows = Object.entries(links);
-
-  if (currentF === 'safe')   rows = rows.filter(([,l]) => l.status === 'safe');
-  if (currentF === 'leak')   rows = rows.filter(([,l]) => l.status === 'leak');
-  if (currentF === 'unused') rows = rows.filter(([,l]) => !l.visits || l.visits === 0);
-  if (q) rows = rows.filter(([,l]) =>
-    (l.name||'').toLowerCase().includes(q) || (l.key||'').toLowerCase().includes(q)
-  );
-  rows.sort(([,a],[,b]) => (b.created||0) - (a.created||0));
-
+  if (currentF==='safe')   rows = rows.filter(([,l]) => l.status==='safe');
+  if (currentF==='leak')   rows = rows.filter(([,l]) => l.status==='leak');
+  if (currentF==='unused') rows = rows.filter(([,l]) => !l.visits||l.visits===0);
+  if (q) rows = rows.filter(([,l]) => (l.name||'').toLowerCase().includes(q)||(l.key||'').toLowerCase().includes(q));
+  rows.sort(([,a],[,b]) => (b.created||0)-(a.created||0));
   const tbody = document.getElementById('tbody');
-  if (!rows.length) {
-    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:48px;color:var(--text3)">No links found</td></tr>`;
-    return;
-  }
-
+  if (!rows.length) { tbody.innerHTML=`<tr><td colspan="8" style="text-align:center;padding:48px;color:var(--text3)">No links found</td></tr>`; return; }
   tbody.innerHTML = rows.map(([id,l]) => {
-    const status  = l.status || 'unused';
-    const trClass = status === 'leak' ? 'tr-leak' : status === 'safe' ? 'tr-safe' : 'tr-unused';
-    const badge   = status === 'leak'
-      ? '<span class="badge badge-leak">⚠ LEAKING</span>'
-      : status === 'safe'
-      ? '<span class="badge badge-safe">✔ SAFE</span>'
-      : '<span class="badge badge-unused">UNUSED</span>';
-    const url    = `${location.origin}${location.pathname}?l=${id}`;
-    const date   = l.created ? new Date(l.created).toLocaleDateString('en-GB') : '—';
-    const ipCnt  = l.ips ? Object.keys(l.ips).length : 0;
-
-    // File indicator
-    let fileCell = '<span style="color:var(--text3);font-size:12px">—</span>';
-    if (l.file_name) {
-      fileCell = `<span style="font-size:12px;color:#34d399;font-weight:600">📎 ${esc(l.file_name)}</span>`;
-    }
-
-    return `<tr class="${trClass}">
-      <td><b style="font-weight:600">${esc(l.name||'—')}</b></td>
-      <td>
-        <div style="display:flex;align-items:center;gap:8px">
-          <span class="mono" style="color:#67e8f9;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block">${url}</span>
-          <button class="copy-btn" data-url="${esc(url)}" onclick="copyText(this.dataset.url)">COPY</button>
-        </div>
-      </td>
+    const st = l.status||'unused';
+    const tr = st==='leak'?'tr-leak':st==='safe'?'tr-safe':'tr-unused';
+    const badge = st==='leak'?'<span class="badge badge-leak">⚠ LEAKING</span>':st==='safe'?'<span class="badge badge-safe">✔ SAFE</span>':'<span class="badge badge-unused">UNUSED</span>';
+    const url = `${location.origin}${location.pathname}?l=${id}`;
+    const date = l.created ? new Date(l.created).toLocaleDateString('en-GB') : '—';
+    const ipCnt = l.ips ? Object.keys(l.ips).length : 0;
+    const fileCell = l.file_name ? `<span style="font-size:12px;color:#34d399;font-weight:600">📎 ${esc(l.file_name)}</span>` : '<span style="color:var(--text3);font-size:12px">—</span>';
+    return `<tr class="${tr}">
+      <td><b>${esc(l.name||'—')}</b></td>
+      <td><div style="display:flex;align-items:center;gap:8px">
+        <span class="mono" style="color:#67e8f9;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block">${url}</span>
+        <button class="copy-btn" data-url="${esc(url)}" onclick="copyText(this.dataset.url)">COPY</button>
+      </div></td>
       <td class="mono" style="color:var(--yellow)">${esc(l.key||'—')}</td>
       <td>${fileCell}</td>
       <td style="font-weight:700;color:#67e8f9;font-family:'JetBrains Mono',monospace">${l.visits||0}</td>
       <td>${badge}</td>
       <td style="color:var(--text3);font-size:13px">${date}</td>
-      <td>
-        <div style="display:flex;gap:6px">
-          <button class="btn btn-ghost btn-sm" data-id="${id}" onclick="showIPs(this.dataset.id)">IPs${ipCnt?` (${ipCnt})`:''}</button>
-          <button class="btn btn-red btn-sm" data-id="${id}" onclick="askDelete(this.dataset.id)">✕</button>
-        </div>
-      </td>
+      <td><div style="display:flex;gap:6px">
+        <button class="btn btn-ghost btn-sm" data-id="${id}" onclick="showIPs(this.dataset.id)">IPs${ipCnt?` (${ipCnt})`:''}</button>
+        <button class="btn btn-red btn-sm" data-id="${id}" onclick="askDelete(this.dataset.id)">✕</button>
+      </div></td>
     </tr>`;
   }).join('');
 }
 
-// ── GENERATE ───────────────────────────────────────────────────────────────
+// ── GENERATE ────────────────────────────────────────────────────────────────
 async function generateLink() {
-  const name    = document.getElementById('gen-name').value.trim();
-  const key     = document.getElementById('gen-key').value.trim();
-  const fileId  = document.getElementById('gen-file').value;
-
+  const name   = document.getElementById('gen-name').value.trim();
+  const key    = document.getElementById('gen-key').value.trim();
+  const fileId = document.getElementById('gen-file').value;
   if (!name) { toast('Enter a customer name!'); return; }
-
   const id = Math.random().toString(36).substr(2,9).toUpperCase();
-
-  // Attach file info if selected
-  let file_name = '';
-  let file_url  = '';
-  if (fileId && uploads[fileId]) {
-    file_name = uploads[fileId].name || '';
-    file_url  = uploads[fileId].url  || '';
-  }
-
-  const data = {
-    name, key, visits:0, created:Date.now(), status:'unused',
-    ips:{}, first_ip:'', file_name, file_url
-  };
-
-  await fbSet(`links/${id}`, data);
+  let file_name='', file_url='';
+  if (fileId && uploads[fileId]) { file_name=uploads[fileId].name||''; file_url=uploads[fileId].url||''; }
+  const data = { name, key, visits:0, created:Date.now(), status:'unused', ips:{}, first_ip:'', file_name, file_url };
+  const ok = await fbSet(`links/${id}`, data);
+  if (!ok) { toast('✘ Failed to save link', 3000); return; }
   links[id] = data;
-  renderStats();
-  renderTable();
-
+  renderStats(); renderTable();
   const url = `${location.origin}${location.pathname}?l=${id}`;
   document.getElementById('gen-url').value = url;
   document.getElementById('gen-result').style.display = 'block';
   document.getElementById('gen-name').value = '';
   document.getElementById('gen-key').value  = '';
   document.getElementById('gen-file').value = '';
+  updateActiveFileBanner();
   toast('✔ Link generated!');
 }
 
-// ── UPLOAD / FILES ─────────────────────────────────────────────────────────
+// ── UPLOAD / FILES ──────────────────────────────────────────────────────────
 async function manualAddFile() {
   const name = document.getElementById('ul-name').value.trim();
   const url  = document.getElementById('ul-url').value.trim();
   if (!name) { toast('Enter a file name'); return; }
   if (!url)  { toast('Enter a download URL'); return; }
 
+  const btn = document.getElementById('add-file-btn');
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
   const id   = Math.random().toString(36).substr(2,8).toUpperCase();
   const data = { name, url, size:0, uploaded:Date.now() };
+  const ok   = await fbSet(`uploads/${id}`, data);
 
-  await fbSet(`uploads/${id}`, data);
+  btn.disabled = false;
+  btn.textContent = '+ ADD FILE';
+
+  if (!ok) {
+    toast('✘ Failed to add file — Firebase error', 4000);
+    return;
+  }
+
+  // Update local state immediately — no need to wait for next poll
+  uploads[id] = data;
   document.getElementById('ul-name').value = '';
   document.getElementById('ul-url').value  = '';
-  await loadUploadedFiles();
+  populateFileDropdown();
+  renderUploadedList();
   toast('✔ File added: ' + name);
 }
 
 async function loadUploadedFiles() {
   const data = await fbGet('uploads');
   uploads = data || {};
-
-  // Update the file dropdown in Generate section
   populateFileDropdown();
+  renderUploadedList();
+}
 
-  const list = document.getElementById('uploaded-list');
+// Separated from loadUploadedFiles so it can be called without a Firebase fetch
+function renderUploadedList() {
+  const list    = document.getElementById('uploaded-list');
   const entries = Object.entries(uploads);
-
   if (!entries.length) {
     list.innerHTML = `<div style="color:var(--text3);font-size:14px;padding:10px 0">No files added yet. Use the form above to add a file.</div>`;
-
-    // Show warning on links page
-    document.getElementById('no-file-warn').style.display = 'block';
+    document.getElementById('no-file-warn').style.display    = 'block';
     document.getElementById('active-file-bar').style.display = 'none';
     return;
   }
-
   document.getElementById('no-file-warn').style.display = 'none';
-
-  // Sort newest first
-  entries.sort(([,a],[,b]) => (b.uploaded||0) - (a.uploaded||0));
-
+  entries.sort(([,a],[,b]) => (b.uploaded||0)-(a.uploaded||0));
   list.innerHTML = entries.map(([id,f]) => `
     <div class="file-item">
       <span class="file-icon">${getFileIcon(f.name)}</span>
       <span class="file-name">${esc(f.name)}</span>
-      <div style="flex:1;font-size:12px;color:#67e8f9;font-family:'JetBrains Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px">
+      <div style="flex:1;font-size:12px;color:#67e8f9;font-family:'JetBrains Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:220px">
         ${f.url ? `<a href="${esc(f.url)}" target="_blank" style="color:inherit;text-decoration:none">${esc(f.url)}</a>` : 'No URL'}
       </div>
       ${f.url ? `<a href="${esc(f.url)}" target="_blank" class="btn btn-ghost btn-sm" style="text-decoration:none;white-space:nowrap">⬇ TEST</a>` : ''}
@@ -826,221 +558,132 @@ async function loadUploadedFiles() {
 function populateFileDropdown() {
   const sel = document.getElementById('gen-file');
   const cur = sel.value;
-
-  // Clear and rebuild options
   sel.innerHTML = '<option value="">— No file (link only) —</option>';
-
-  const entries = Object.entries(uploads).sort(([,a],[,b]) => (b.uploaded||0) - (a.uploaded||0));
-  entries.forEach(([id,f]) => {
+  Object.entries(uploads).sort(([,a],[,b])=>(b.uploaded||0)-(a.uploaded||0)).forEach(([id,f]) => {
     const opt = document.createElement('option');
-    opt.value = id;
-    opt.textContent = f.name;
+    opt.value = id; opt.textContent = f.name;
     sel.appendChild(opt);
   });
-
-  // Restore previous selection if still valid
   if (cur && uploads[cur]) sel.value = cur;
-
-  // Show active file bar if a file is selected
   updateActiveFileBanner();
 }
 
 function updateActiveFileBanner() {
-  const sel    = document.getElementById('gen-file');
-  const fileId = sel.value;
+  const fileId = document.getElementById('gen-file').value;
   const bar    = document.getElementById('active-file-bar');
-  const nameEl = document.getElementById('active-file-name');
-
   if (fileId && uploads[fileId]) {
-    bar.style.display  = 'block';
-    nameEl.textContent = uploads[fileId].name;
+    document.getElementById('active-file-name').textContent = uploads[fileId].name;
+    bar.style.display = 'block';
   } else {
-    bar.style.display  = 'none';
+    bar.style.display = 'none';
   }
 }
 
-// Wire up dropdown change
-document.addEventListener('DOMContentLoaded', () => {
-  const sel = document.getElementById('gen-file');
-  if (sel) sel.addEventListener('change', updateActiveFileBanner);
-});
-
 async function deleteUpload(id) {
-  await fbDelete(`uploads/${id}`);
-  await loadUploadedFiles();
+  const ok = await fbDelete(`uploads/${id}`);
+  if (!ok) { toast('✘ Failed to delete'); return; }
+  delete uploads[id];
+  populateFileDropdown();
+  renderUploadedList();
   toast('File removed');
 }
 
-// ── IP MODAL ───────────────────────────────────────────────────────────────
+// ── IP MODAL ────────────────────────────────────────────────────────────────
 function showIPs(id) {
-  const l = links[id];
-  if (!l) return;
-  const ips     = l.ips || {};
-  const firstIp = l.first_ip || '';
-  const entries = Object.entries(ips);
-
-  let html = '';
-  if (!entries.length) {
-    html = `<div style="color:var(--text3);font-size:14px;padding:8px 0">No visits yet.</div>`;
-  } else {
-    html = entries.map(([ip, ts]) => {
-      const ipReal = ip.replace(/_/g,'.');
-      const isSus  = firstIp && ipReal !== firstIp;
-      const time   = new Date(ts).toLocaleString();
-      return `<div class="ip-item ${isSus?'sus':'first'}">
-        <div class="ip-dot ${isSus?'r':'g'}"></div>
-        <span class="mono" style="flex:1">${ipReal}</span>
-        <span style="font-size:12px;color:var(--text2)">${time}</span>
-        ${isSus ? '<span style="font-size:11px;color:var(--red);font-weight:700">DIFFERENT IP</span>' : '<span style="font-size:11px;color:var(--green);font-weight:700">FIRST</span>'}
-      </div>`;
-    }).join('');
-  }
-
-  document.getElementById('ip-content').innerHTML = html;
+  const l = links[id]; if (!l) return;
+  const ips=l.ips||{}, firstIp=l.first_ip||'', entries=Object.entries(ips);
+  document.getElementById('ip-content').innerHTML = !entries.length
+    ? `<div style="color:var(--text3);font-size:14px;padding:8px 0">No visits yet.</div>`
+    : entries.map(([ip,ts]) => {
+        const ipReal=ip.replace(/_/g,'.'), isSus=firstIp&&ipReal!==firstIp;
+        return `<div class="ip-item ${isSus?'sus':'first'}">
+          <div class="ip-dot ${isSus?'r':'g'}"></div>
+          <span class="mono" style="flex:1">${ipReal}</span>
+          <span style="font-size:12px;color:var(--text2)">${new Date(ts).toLocaleString()}</span>
+          ${isSus?'<span style="font-size:11px;color:var(--red);font-weight:700">DIFFERENT IP</span>':'<span style="font-size:11px;color:var(--green);font-weight:700">FIRST</span>'}
+        </div>`;
+      }).join('');
   document.getElementById('ip-modal').classList.add('open');
 }
 
-// ── DELETE ─────────────────────────────────────────────────────────────────
-function askDelete(id) { deleteId = id; document.getElementById('del-modal').classList.add('open'); }
+// ── DELETE ──────────────────────────────────────────────────────────────────
+function askDelete(id) { deleteId=id; document.getElementById('del-modal').classList.add('open'); }
 async function confirmDelete() {
   if (!deleteId) return;
   await fbDelete(`links/${deleteId}`);
-  delete links[deleteId];
-  deleteId = null;
-  closeModal('del-modal');
-  renderStats();
-  renderTable();
+  delete links[deleteId]; deleteId=null;
+  closeModal('del-modal'); renderStats(); renderTable();
   toast('Link deleted');
 }
 async function deleteAllLinks() {
   if (!confirm('Delete ALL links? This cannot be undone!')) return;
-  await fbDelete('links');
-  links = {};
-  renderStats();
-  renderTable();
+  await fbDelete('links'); links={};
+  renderStats(); renderTable();
   toast('All links deleted');
 }
 
-// ── SETTINGS ───────────────────────────────────────────────────────────────
+// ── SETTINGS ────────────────────────────────────────────────────────────────
 function savePass() {
   const v = document.getElementById('new-pass').value.trim();
   if (!v) { toast('Enter a new password'); return; }
-  PASS = v;
-  localStorage.setItem('slcep_pass', v);
-  document.getElementById('new-pass').value = '';
+  PASS=v; localStorage.setItem('slcep_pass',v);
+  document.getElementById('new-pass').value='';
   toast('✔ Password saved');
 }
 function saveDiscord() {
   const v = document.getElementById('discord-link').value.trim();
-  DISCORD = v;
-  localStorage.setItem('slcep_discord', v);
+  DISCORD=v; localStorage.setItem('slcep_discord',v);
   toast('✔ Discord link saved');
 }
 
-// ── BUYER PAGE ─────────────────────────────────────────────────────────────
+// ── BUYER PAGE ───────────────────────────────────────────────────────────────
 async function showBuyerPage(id) {
-  let ip = 'unknown';
-  try {
-    const r = await fetch('https://api.ipify.org?format=json');
-    const j = await r.json();
-    ip = j.ip;
-  } catch {}
-
-  const link = await fbGet(`links/${id}`);
-  const card  = document.getElementById('buyer-card');
-
+  let ip='unknown';
+  try { const j=await(await fetch('https://api.ipify.org?format=json')).json(); ip=j.ip; } catch {}
+  const link=await fbGet(`links/${id}`), card=document.getElementById('buyer-card');
   if (!link) {
-    card.innerHTML = `
-      <div class="buyer-logo glow-purple">SLCEP</div>
-      <div style="font-size:48px;margin-bottom:16px">🔒</div>
-      <div class="buyer-name" style="color:var(--red)">Invalid Link</div>
-      <div class="buyer-sub">This link does not exist or has been removed.</div>
-      <div class="buyer-footer">Made by @m0dzn_edit</div>`;
+    card.innerHTML=`<div class="buyer-logo glow-purple">SLCEP</div><div style="font-size:48px;margin-bottom:16px">🔒</div><div class="buyer-name" style="color:var(--red)">Invalid Link</div><div class="buyer-sub">This link does not exist or has been removed.</div><div class="buyer-footer">Made by @m0dzn_edit</div>`;
     return;
   }
-
-  // Track visit + detect leak
-  const visits  = (link.visits || 0) + 1;
-  const firstIp = link.first_ip || ip;
-  const ipKey   = ip.replace(/\./g,'_');
-  const ips     = link.ips || {};
-  ips[ipKey]    = Date.now();
-
-  let status = link.status || 'unused';
-  if (!link.first_ip)            status = 'safe';
-  else if (link.first_ip !== ip) status = 'leak';
-
-  await fbPatch(`links/${id}`, { visits, status, first_ip: firstIp, ips });
-
-  // ── Build buyer card ───────────────────────────────────────────────────
-  const hasFile = link.file_url && link.file_url.trim() !== '';
-  _buyerKey = link.key || '';
-
-  card.innerHTML = `
+  const visits=(link.visits||0)+1, firstIp=link.first_ip||ip, ipKey=ip.replace(/\./g,'_'), ips=link.ips||{};
+  ips[ipKey]=Date.now();
+  let status=link.status||'unused';
+  if (!link.first_ip) status='safe'; else if (link.first_ip!==ip) status='leak';
+  await fbPatch(`links/${id}`,{visits,status,first_ip:firstIp,ips});
+  const hasFile=link.file_url&&link.file_url.trim()!=='';
+  _buyerKey=link.key||'';
+  card.innerHTML=`
     <div class="buyer-logo glow-purple">SLCEP</div>
     <div class="buyer-name">${esc(link.name)}</div>
     <div class="buyer-sub">Your purchase is ready below</div>
-
-    ${link.key ? `
-      <div style="margin-bottom:24px">
-        <div style="font-size:11px;letter-spacing:2px;color:var(--text2);margin-bottom:10px;font-weight:600">LICENSE KEY</div>
-        <div class="key-box">
-          <div class="key-text">${esc(link.key)}</div>
-        </div><br>
-        <button class="copy-btn" id="copy-key-btn" style="margin-top:8px;padding:6px 18px" onclick="copyBuyerKey(this)">
-          COPY KEY
-        </button>
-      </div>
-    ` : ''}
-
-    ${hasFile ? `
-      <div style="margin-top:8px">
-        <a class="dl-btn" href="${esc(link.file_url)}" target="_blank" rel="noopener">
-          <span class="dl-btn-icon">⬇</span> DOWNLOAD
-        </a>
-        <div style="font-size:12px;color:var(--text3);margin-top:10px">📎 ${esc(link.file_name || 'File')}</div>
-      </div>
-    ` : `
-      <div style="color:var(--text2);font-size:14px;margin-top:16px;padding:20px;background:var(--bg3);border-radius:12px;border:1px solid var(--border)">
-        Download link will appear here once available.
-      </div>
-    `}
-
-    <div class="buyer-footer">Made by @m0dzn_edit &nbsp;·&nbsp; SLCEP</div>
-  `;
+    ${link.key?`<div style="margin-bottom:24px">
+      <div style="font-size:11px;letter-spacing:2px;color:var(--text2);margin-bottom:10px;font-weight:600">LICENSE KEY</div>
+      <div class="key-box"><div class="key-text">${esc(link.key)}</div></div><br>
+      <button class="copy-btn" style="margin-top:8px;padding:6px 18px" onclick="copyBuyerKey(this)">COPY KEY</button>
+    </div>`:''}
+    ${hasFile?`<div style="margin-top:8px">
+      <a class="dl-btn" href="${esc(link.file_url)}" target="_blank" rel="noopener">⬇ DOWNLOAD</a>
+      <div style="font-size:12px;color:var(--text3);margin-top:10px">📎 ${esc(link.file_name||'File')}</div>
+    </div>`:`<div style="color:var(--text2);font-size:14px;margin-top:16px;padding:20px;background:var(--bg3);border-radius:12px;border:1px solid var(--border)">Download link will appear here once available.</div>`}
+    <div class="buyer-footer">Made by @m0dzn_edit · SLCEP</div>`;
 }
 
-// ── UTILS ──────────────────────────────────────────────────────────────────
-function esc(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+// ── UTILS ────────────────────────────────────────────────────────────────────
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function copyText(t){navigator.clipboard.writeText(t).then(()=>toast('✔ Copied!')).catch(()=>{})}
+function toast(msg,dur=2500){
+  const el=document.getElementById('toast');
+  el.textContent=msg; el.className=msg.startsWith('✘')?'show err':'show';
+  clearTimeout(el._t); el._t=setTimeout(()=>el.className='',dur);
 }
-function copyText(t) {
-  navigator.clipboard.writeText(t).then(() => toast('✔ Copied!')).catch(()=>{});
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+function copyBuyerKey(btn){
+  if(!_buyerKey)return;
+  navigator.clipboard.writeText(_buyerKey).then(()=>{btn.textContent='✔ COPIED';setTimeout(()=>btn.textContent='COPY KEY',1500)}).catch(()=>{});
 }
-function toast(msg, dur=2500) {
-  const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.classList.add('show');
-  setTimeout(() => el.classList.remove('show'), dur);
-}
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-function formatBytes(b) {
-  if (!b) return '';
-  if (b < 1024) return b + ' B';
-  if (b < 1048576) return (b/1024).toFixed(1) + ' KB';
-  return (b/1048576).toFixed(1) + ' MB';
-}
-function copyBuyerKey(btn) {
-  if (!_buyerKey) return;
-  navigator.clipboard.writeText(_buyerKey).then(() => {
-    btn.textContent = '✔ COPIED';
-    setTimeout(() => btn.textContent = 'COPY KEY', 1500);
-  }).catch(() => {});
-}
-function getFileIcon(name) {
-  const ext = (name||'').split('.').pop().toLowerCase();
-  const map = {exe:'⚙',zip:'📦',rar:'📦',py:'🐍',mp4:'🎬',png:'🖼',jpg:'🖼',pdf:'📄'};
-  return map[ext] || '📄';
+function getFileIcon(name){
+  const m={exe:'⚙',zip:'📦',rar:'📦',py:'🐍',mp4:'🎬',png:'🖼',jpg:'🖼',pdf:'📄'};
+  return m[(name||'').split('.').pop().toLowerCase()]||'📄';
 }
 </script>
 </body>
