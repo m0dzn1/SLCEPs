@@ -30,13 +30,10 @@
 }
 
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
-
-/* scrollbar */
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track{background:var(--bg2)}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
 
-/* ── GLOW TEXT ── */
 .glow-purple{color:var(--purple2);text-shadow:0 0 20px var(--purple-glow),0 0 40px rgba(139,92,246,0.2)}
 .glow-cyan{color:#67e8f9;text-shadow:0 0 20px var(--cyan-glow),0 0 40px rgba(6,182,212,0.15)}
 
@@ -48,25 +45,18 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 }
 .login-card{
   width:380px;padding:44px;
-  background:var(--bg2);
-  border:1px solid var(--border);
-  border-radius:20px;
-  position:relative;
-  overflow:hidden;
+  background:var(--bg2);border:1px solid var(--border);border-radius:20px;
+  position:relative;overflow:hidden;
 }
 .login-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,var(--purple),transparent);
 }
-.login-logo{
-  font-size:32px;font-weight:900;letter-spacing:6px;
-  margin-bottom:6px;text-align:center;
-}
+.login-logo{font-size:32px;font-weight:900;letter-spacing:6px;margin-bottom:6px;text-align:center}
 .login-sub{font-size:13px;color:var(--text2);text-align:center;margin-bottom:36px;letter-spacing:1px}
 .field-label{font-size:11px;letter-spacing:2px;color:var(--text3);margin-bottom:8px;font-weight:600}
 .inp{
-  width:100%;padding:12px 16px;
-  background:var(--bg3);border:1px solid var(--border2);
+  width:100%;padding:12px 16px;background:var(--bg3);border:1px solid var(--border2);
   color:var(--text);border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;
   outline:none;transition:border-color .2s,box-shadow .2s;margin-bottom:16px;
 }
@@ -76,30 +66,25 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
   letter-spacing:2px;background:var(--purple);color:#fff;border:none;border-radius:10px;
   cursor:pointer;transition:all .2s;position:relative;overflow:hidden;
 }
-.btn-login::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,0.1),transparent);
-}
+.btn-login::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.1),transparent)}
 .btn-login:hover{background:#7c3aed;box-shadow:0 0 24px var(--purple-glow)}
 .login-err{font-size:13px;color:var(--red);min-height:20px;text-align:center;margin-top:10px}
 
 /* ── DASHBOARD ── */
 #dashboard{display:none;min-height:100vh}
+.layout{display:flex;min-height:100vh}
 
 /* ── SIDEBAR ── */
-.layout{display:flex;min-height:100vh}
 .sidebar{
-  width:220px;min-height:100vh;
-  background:var(--bg2);border-right:1px solid var(--border);
+  width:220px;min-height:100vh;background:var(--bg2);border-right:1px solid var(--border);
   padding:24px 16px;display:flex;flex-direction:column;
   position:sticky;top:0;height:100vh;overflow-y:auto;flex-shrink:0;
 }
 .sidebar-logo{font-size:18px;font-weight:900;letter-spacing:4px;padding:0 8px 28px;border-bottom:1px solid var(--border);margin-bottom:20px}
 .nav-label{font-size:10px;letter-spacing:3px;color:var(--text3);font-weight:600;padding:0 8px;margin:16px 0 8px}
 .nav-item{
-  display:flex;align-items:center;gap:10px;padding:10px 12px;
-  border-radius:10px;cursor:pointer;font-size:14px;font-weight:500;
-  color:var(--text2);transition:all .15s;margin-bottom:2px;
+  display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;
+  cursor:pointer;font-size:14px;font-weight:500;color:var(--text2);transition:all .15s;margin-bottom:2px;
 }
 .nav-item:hover{background:var(--bg3);color:var(--text)}
 .nav-item.active{background:rgba(139,92,246,0.15);color:var(--purple2);font-weight:600}
@@ -116,14 +101,8 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 
 /* ── STATS ── */
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
-.stat-card{
-  background:var(--bg2);border:1px solid var(--border);border-radius:14px;
-  padding:20px 22px;position:relative;overflow:hidden;
-}
-.stat-card::after{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  opacity:0.6;
-}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px 22px;position:relative;overflow:hidden}
+.stat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;opacity:0.6}
 .stat-card.s-purple::after{background:linear-gradient(90deg,transparent,var(--purple),transparent)}
 .stat-card.s-cyan::after{background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
 .stat-card.s-green::after{background:linear-gradient(90deg,transparent,var(--green),transparent)}
@@ -141,19 +120,18 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .card-title span{color:var(--text2);font-weight:400;font-size:13px}
 
 /* ── FORM ── */
-.form-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
-.field{display:flex;flex-direction:column}
+.form-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:end}
+.field{display:flex;flex-direction:column;gap:6px}
+.field-lbl{font-size:11px;letter-spacing:2px;color:var(--text3);font-weight:600}
 .inp-sm{
   padding:10px 14px;background:var(--bg3);border:1px solid var(--border2);
   color:var(--text);border-radius:10px;font-family:'Outfit',sans-serif;font-size:14px;
-  outline:none;transition:border-color .2s,box-shadow .2s;
+  outline:none;transition:border-color .2s,box-shadow .2s;width:100%;
 }
 .inp-sm:focus{border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-glow)}
-.btn{
-  padding:10px 20px;border:none;border-radius:10px;cursor:pointer;
-  font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;
-  letter-spacing:1px;transition:all .15s;
-}
+select.inp-sm{cursor:pointer}
+select.inp-sm option{background:var(--bg3);color:var(--text)}
+.btn{padding:10px 20px;border:none;border-radius:10px;cursor:pointer;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;transition:all .15s}
 .btn:active{transform:scale(.97)}
 .btn-purple{background:var(--purple);color:#fff}
 .btn-purple:hover{background:#7c3aed;box-shadow:0 0 18px var(--purple-glow)}
@@ -162,12 +140,12 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .btn-ghost{background:var(--bg3);color:var(--text2);border:1px solid var(--border2)}
 .btn-ghost:hover{background:var(--border);color:var(--text)}
 .btn-sm{padding:6px 14px;font-size:12px}
+.btn-generate{padding:10px 24px;align-self:flex-end}
 
 /* ── RESULT BOX ── */
 .result-box{
   display:none;margin-top:14px;padding:14px 16px;
-  background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.3);
-  border-radius:10px;
+  background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.3);border-radius:10px;
 }
 .result-label{font-size:11px;letter-spacing:2px;color:var(--purple2);margin-bottom:8px;font-weight:600}
 .result-row{display:flex;gap:8px;align-items:center}
@@ -181,27 +159,22 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .filter-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
 .filter-btn{
   padding:7px 16px;border-radius:20px;border:1px solid var(--border2);
-  background:transparent;color:var(--text2);font-family:'Outfit',sans-serif;
-  font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;
+  background:transparent;color:var(--text2);font-family:'Outfit',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;
 }
 .filter-btn:hover{border-color:var(--border);color:var(--text)}
 .filter-btn.active{border-color:var(--purple);color:var(--purple2);background:rgba(139,92,246,0.1)}
 .search-inp{
   flex:1;min-width:160px;max-width:260px;padding:8px 14px;
   background:var(--bg3);border:1px solid var(--border2);color:var(--text);
-  border-radius:10px;font-family:'Outfit',sans-serif;font-size:13px;outline:none;
-  transition:border-color .2s;
+  border-radius:10px;font-family:'Outfit',sans-serif;font-size:13px;outline:none;transition:border-color .2s;
 }
 .search-inp:focus{border-color:var(--purple)}
 
 /* ── TABLE ── */
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border)}
-table{width:100%;border-collapse:collapse;min-width:700px}
+table{width:100%;border-collapse:collapse;min-width:750px}
 thead{background:var(--bg3)}
-th{
-  padding:12px 16px;text-align:left;font-size:10px;letter-spacing:2px;
-  color:var(--text3);font-weight:700;text-transform:uppercase;white-space:nowrap;
-}
+th{padding:12px 16px;text-align:left;font-size:10px;letter-spacing:2px;color:var(--text3);font-weight:700;text-transform:uppercase;white-space:nowrap}
 td{padding:14px 16px;border-top:1px solid var(--border);font-size:14px;vertical-align:middle}
 tr:hover td{background:rgba(255,255,255,0.015)}
 .tr-leak td:first-child{border-left:2px solid var(--red)}
@@ -214,20 +187,17 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 .badge-safe{background:rgba(16,185,129,0.12);color:#34d399;border:1px solid rgba(16,185,129,0.3)}
 .badge-unused{background:rgba(90,90,122,0.15);color:var(--text3);border:1px solid var(--border2)}
 @keyframes badge-blink{0%,100%{opacity:1}50%{opacity:.5}}
-
 .mono{font-family:'JetBrains Mono',monospace;font-size:12px}
 .copy-btn{
   padding:4px 10px;background:none;border:1px solid var(--border2);
-  color:var(--text3);border-radius:6px;cursor:pointer;font-size:11px;
-  transition:all .15s;font-family:'Outfit',sans-serif;
+  color:var(--text3);border-radius:6px;cursor:pointer;font-size:11px;transition:all .15s;font-family:'Outfit',sans-serif;
 }
 .copy-btn:hover{border-color:var(--cyan);color:#67e8f9}
 
 /* ── FILE UPLOAD ── */
 .upload-zone{
   border:2px dashed var(--border2);border-radius:14px;padding:40px;
-  text-align:center;cursor:pointer;transition:all .2s;
-  background:var(--bg3);position:relative;
+  text-align:center;cursor:pointer;transition:all .2s;background:var(--bg3);position:relative;
 }
 .upload-zone:hover,.upload-zone.drag{border-color:var(--purple);background:rgba(139,92,246,0.05)}
 .upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
@@ -245,10 +215,17 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 .file-remove{background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;padding:2px 6px;border-radius:4px;transition:all .15s}
 .file-remove:hover{color:var(--red);background:rgba(239,68,68,0.1)}
 
+/* ── ACTIVE FILE PILL ── */
+.active-file-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;background:rgba(16,185,129,0.1);
+  border:1px solid rgba(16,185,129,0.3);border-radius:8px;
+  font-size:12px;color:#34d399;font-weight:600;margin-bottom:16px;
+}
+
 /* ── REALTIME DOT ── */
 .rt-dot{
-  width:7px;height:7px;border-radius:50%;background:var(--green);
-  display:inline-block;margin-right:6px;
+  width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px;
   animation:rt-pulse 2s infinite;box-shadow:0 0 6px var(--green-glow);
 }
 @keyframes rt-pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -278,8 +255,7 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 
 /* ── IP LIST ── */
 .ip-item{
-  display:flex;align-items:center;gap:10px;padding:9px 12px;
-  border-radius:8px;margin-bottom:6px;
+  display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;margin-bottom:6px;
   background:var(--bg3);border:1px solid var(--border);font-size:13px;
 }
 .ip-item.first{border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.05)}
@@ -295,8 +271,7 @@ tr:hover td{background:rgba(255,255,255,0.015)}
   flex-direction:column;padding:40px 20px;
 }
 .buyer-card{
-  width:100%;max-width:480px;
-  background:var(--bg2);border:1px solid var(--border);border-radius:20px;
+  width:100%;max-width:480px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;
   padding:40px;text-align:center;position:relative;overflow:hidden;
 }
 .buyer-card::before{
@@ -312,8 +287,7 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 }
 .key-text{font-family:'JetBrains Mono',monospace;font-size:16px;color:#67e8f9;letter-spacing:2px}
 .dl-btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:14px 32px;margin-top:20px;
+  display:inline-flex;align-items:center;gap:10px;padding:14px 32px;margin-top:20px;
   background:var(--purple);color:#fff;border:none;border-radius:12px;
   font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;
   cursor:pointer;transition:all .2s;letter-spacing:1px;text-decoration:none;
@@ -397,18 +371,38 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 
         <!-- Generate -->
         <div class="card">
-          <div class="card-title">⬡ Generate Link <span>— create a new protected link for a buyer</span></div>
+          <div class="card-title">⬡ Generate Link <span>— create a protected download link for a customer</span></div>
+
+          <!-- Active file indicator -->
+          <div id="active-file-bar" style="display:none;margin-bottom:16px">
+            <div class="active-file-pill">
+              <span>📎</span>
+              <span id="active-file-name">No file selected</span>
+              <span style="color:var(--text3);font-weight:400">will be attached</span>
+            </div>
+          </div>
+          <div id="no-file-warn" style="display:none;margin-bottom:16px;padding:10px 14px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;font-size:13px;color:var(--yellow)">
+            ⚠ No file uploaded yet. Upload a file first so buyers can download it.
+          </div>
+
           <div class="form-row">
             <div class="field">
-              <div class="field-label" style="font-size:11px;letter-spacing:2px;color:var(--text3);margin-bottom:6px;font-weight:600">LINK NAME</div>
-              <input class="inp-sm" id="gen-name" type="text" placeholder="e.g. Benyx Pack for John">
+              <div class="field-lbl">CUSTOMER NAME</div>
+              <input class="inp-sm" id="gen-name" type="text" placeholder="e.g. John Doe">
             </div>
             <div class="field">
-              <div class="field-label" style="font-size:11px;letter-spacing:2px;color:var(--text3);margin-bottom:6px;font-weight:600">LICENSE KEY <span style="color:var(--text3);font-weight:400">(optional)</span></div>
+              <div class="field-lbl">LICENSE KEY <span style="color:var(--text3);font-weight:400;letter-spacing:0">(optional)</span></div>
               <input class="inp-sm" id="gen-key" type="text" placeholder="SLCEP-XXXX-XXXX-XXXX-XXXX">
             </div>
-            <button class="btn btn-purple" onclick="generateLink()">+ GENERATE</button>
+            <div class="field">
+              <div class="field-lbl">ATTACH FILE <span style="color:var(--text3);font-weight:400;letter-spacing:0">(optional)</span></div>
+              <select class="inp-sm" id="gen-file">
+                <option value="">— No file (link only) —</option>
+              </select>
+            </div>
+            <button class="btn btn-purple btn-generate" onclick="generateLink()">+ GENERATE</button>
           </div>
+
           <div class="result-box" id="gen-result">
             <div class="result-label">GENERATED LINK</div>
             <div class="result-row">
@@ -424,15 +418,15 @@ tr:hover td{background:rgba(255,255,255,0.015)}
           <button class="filter-btn" onclick="setFilter('safe',this)">SAFE</button>
           <button class="filter-btn" onclick="setFilter('leak',this)">⚠ LEAKING</button>
           <button class="filter-btn" onclick="setFilter('unused',this)">UNUSED</button>
-          <input class="search-inp" id="search" placeholder="Search name or key..." oninput="renderTable()">
+          <input class="search-inp" id="search" placeholder="Search customer or key..." oninput="renderTable()">
         </div>
 
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>NAME</th><th>LINK</th><th>KEY</th>
-                <th>VISITS</th><th>STATUS</th><th>DATE</th><th>ACTIONS</th>
+                <th>CUSTOMER</th><th>LINK</th><th>KEY</th>
+                <th>FILE</th><th>VISITS</th><th>STATUS</th><th>DATE</th><th>ACTIONS</th>
               </tr>
             </thead>
             <tbody id="tbody"></tbody>
@@ -443,26 +437,35 @@ tr:hover td{background:rgba(255,255,255,0.015)}
       <!-- ── UPLOAD PAGE ── -->
       <div class="page" id="page-upload">
         <div class="page-title">File Upload</div>
-        <div class="page-sub">Upload your EXE or files — buyers get a download button on their link page</div>
+        <div class="page-sub">Upload your EXE or any file — it will appear as a download button on buyer link pages</div>
 
         <div class="card">
-          <div class="card-title">⬆ Upload File <span>— this will be linked to new links you generate</span></div>
+          <div class="card-title">⬆ Upload File <span>— paste a direct download URL for the file</span></div>
 
-          <div class="upload-zone" id="upload-zone"
-            ondragover="event.preventDefault();this.classList.add('drag')"
-            ondragleave="this.classList.remove('drag')"
-            ondrop="handleDrop(event)">
-            <input type="file" id="file-input" multiple onchange="handleFiles(this.files)">
-            <div class="upload-icon">⬆</div>
-            <div class="upload-title">Drop files here or click to browse</div>
-            <div class="upload-sub">EXE, ZIP, RAR or any file type</div>
+          <!-- Quick upload form -->
+          <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;margin-bottom:20px">
+            <div class="field">
+              <div class="field-lbl">FILE NAME</div>
+              <input class="inp-sm" id="ul-name" type="text" placeholder="e.g. SLCEP_Setup.exe">
+            </div>
+            <div class="field">
+              <div class="field-lbl">DIRECT DOWNLOAD URL</div>
+              <input class="inp-sm" id="ul-url" type="text" placeholder="https://drive.google.com/...">
+            </div>
+            <button class="btn btn-purple" onclick="manualAddFile()" style="white-space:nowrap">+ ADD FILE</button>
           </div>
 
-          <div class="file-list" id="file-list"></div>
+          <div style="font-size:12px;color:var(--text3);padding:10px 14px;background:var(--bg3);border-radius:8px;border:1px solid var(--border);line-height:1.7">
+            💡 <strong style="color:var(--text2)">How to get a direct download URL:</strong><br>
+            • <strong style="color:var(--text2)">Google Drive:</strong> Share → Anyone with link → copy link<br>
+            • <strong style="color:var(--text2)">MEGA:</strong> Right-click → Get link<br>
+            • <strong style="color:var(--text2)">MediaFire / GoFile:</strong> Upload and copy direct link<br>
+            The download button on buyer pages will link directly to this URL.
+          </div>
         </div>
 
         <div class="card">
-          <div class="card-title">📁 Uploaded Files <span>— stored in Firebase</span></div>
+          <div class="card-title">📁 Your Files <span>— click "Set Active" to use as default for new links</span></div>
           <div id="uploaded-list">
             <div style="color:var(--text3);font-size:14px;padding:10px 0">Loading files...</div>
           </div>
@@ -568,34 +571,34 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 <div id="toast"></div>
 
 <script>
-// ── CONFIG ────────────────────────────────────────────────────────────────────
-const FB   = "https://slcep-cdfa4-default-rtdb.asia-southeast1.firebasedatabase.app";
-let PASS   = localStorage.getItem('slcep_pass') || "slcep2024"; // change this!
+// ── CONFIG ─────────────────────────────────────────────────────────────────
+const FB    = "https://slcep-cdfa4-default-rtdb.asia-southeast1.firebasedatabase.app";
+let PASS    = localStorage.getItem('slcep_pass') || "slcep2024";
 let DISCORD = localStorage.getItem('slcep_discord') || "https://discord.gg/yourserver";
 
-// ── STATE ─────────────────────────────────────────────────────────────────────
-let links      = {};
-let currentF   = 'all';
-let deleteId   = null;
-let interval   = null;
-let pendingFiles = [];
+// ── STATE ──────────────────────────────────────────────────────────────────
+let links       = {};
+let _buyerKey   = '';
+let uploads     = {};
+let currentF    = 'all';
+let deleteId    = null;
 
-// ── INIT ─────────────────────────────────────────────────────────────────────
+// ── INIT ───────────────────────────────────────────────────────────────────
 window.onload = () => {
   const p = new URLSearchParams(location.search);
   const l = p.get('l');
   if (l) {
-    document.getElementById('login').style.display      = 'none';
-    document.getElementById('link-view').style.display  = 'flex';
+    document.getElementById('login').style.display     = 'none';
+    document.getElementById('link-view').style.display = 'flex';
     showBuyerPage(l);
   } else {
-    document.getElementById('link-view').style.display  = 'none';
+    document.getElementById('link-view').style.display = 'none';
   }
   document.getElementById('fb-url-display').textContent = FB;
   document.getElementById('discord-link').value = DISCORD;
 };
 
-// ── LOGIN ─────────────────────────────────────────────────────────────────────
+// ── LOGIN ──────────────────────────────────────────────────────────────────
 function doLogin() {
   const v = document.getElementById('login-pass').value;
   if (v === PASS) {
@@ -609,11 +612,12 @@ function doLogin() {
   }
 }
 
-// ── DASHBOARD ─────────────────────────────────────────────────────────────────
+// ── DASHBOARD ──────────────────────────────────────────────────────────────
 function startDashboard() {
   loadLinks();
   loadUploadedFiles();
-  interval = setInterval(loadLinks, 4000);
+  setInterval(loadLinks, 4000);
+  setInterval(loadUploadedFiles, 8000);
 }
 
 function showPage(name, el) {
@@ -623,26 +627,22 @@ function showPage(name, el) {
   el.classList.add('active');
 }
 
-// ── FIREBASE ──────────────────────────────────────────────────────────────────
+// ── FIREBASE ───────────────────────────────────────────────────────────────
 async function fbGet(path) {
-  try {
-    const r = await fetch(`${FB}/${path}.json`);
-    return r.ok ? r.json() : null;
-  } catch { return null; }
+  try { const r = await fetch(`${FB}/${path}.json`); return r.ok ? r.json() : null; }
+  catch { return null; }
 }
 async function fbSet(path, data) {
   try {
     await fetch(`${FB}/${path}.json`, {
-      method:'PUT', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(data)
+      method:'PUT', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
     });
   } catch {}
 }
 async function fbPatch(path, data) {
   try {
     await fetch(`${FB}/${path}.json`, {
-      method:'PATCH', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify(data)
+      method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)
     });
   } catch {}
 }
@@ -650,7 +650,7 @@ async function fbDelete(path) {
   try { await fetch(`${FB}/${path}.json`, {method:'DELETE'}); } catch {}
 }
 
-// ── LINKS ─────────────────────────────────────────────────────────────────────
+// ── LINKS ──────────────────────────────────────────────────────────────────
 async function loadLinks() {
   const data = await fbGet('links');
   links = data || {};
@@ -680,59 +680,80 @@ function renderTable() {
   if (currentF === 'safe')   rows = rows.filter(([,l]) => l.status === 'safe');
   if (currentF === 'leak')   rows = rows.filter(([,l]) => l.status === 'leak');
   if (currentF === 'unused') rows = rows.filter(([,l]) => !l.visits || l.visits === 0);
-
   if (q) rows = rows.filter(([,l]) =>
     (l.name||'').toLowerCase().includes(q) || (l.key||'').toLowerCase().includes(q)
   );
-
   rows.sort(([,a],[,b]) => (b.created||0) - (a.created||0));
 
   const tbody = document.getElementById('tbody');
   if (!rows.length) {
-    tbody.innerHTML = `<tr><td colspan="7" class="empty-row" style="text-align:center;padding:48px;color:var(--text3)">No links found</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:48px;color:var(--text3)">No links found</td></tr>`;
     return;
   }
 
   tbody.innerHTML = rows.map(([id,l]) => {
-    const status = l.status || 'unused';
+    const status  = l.status || 'unused';
     const trClass = status === 'leak' ? 'tr-leak' : status === 'safe' ? 'tr-safe' : 'tr-unused';
-    const badge  = status === 'leak'   ? '<span class="badge badge-leak">⚠ LEAKING</span>'
-                 : status === 'safe'   ? '<span class="badge badge-safe">✔ SAFE</span>'
-                 :                       '<span class="badge badge-unused">UNUSED</span>';
+    const badge   = status === 'leak'
+      ? '<span class="badge badge-leak">⚠ LEAKING</span>'
+      : status === 'safe'
+      ? '<span class="badge badge-safe">✔ SAFE</span>'
+      : '<span class="badge badge-unused">UNUSED</span>';
     const url    = `${location.origin}${location.pathname}?l=${id}`;
     const date   = l.created ? new Date(l.created).toLocaleDateString('en-GB') : '—';
     const ipCnt  = l.ips ? Object.keys(l.ips).length : 0;
+
+    // File indicator
+    let fileCell = '<span style="color:var(--text3);font-size:12px">—</span>';
+    if (l.file_name) {
+      fileCell = `<span style="font-size:12px;color:#34d399;font-weight:600">📎 ${esc(l.file_name)}</span>`;
+    }
 
     return `<tr class="${trClass}">
       <td><b style="font-weight:600">${esc(l.name||'—')}</b></td>
       <td>
         <div style="display:flex;align-items:center;gap:8px">
-          <span class="mono" style="color:#67e8f9;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block">${url}</span>
-          <button class="copy-btn" onclick="copyText('${url}')">COPY</button>
+          <span class="mono" style="color:#67e8f9;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block">${url}</span>
+          <button class="copy-btn" data-url="${esc(url)}" onclick="copyText(this.dataset.url)">COPY</button>
         </div>
       </td>
       <td class="mono" style="color:var(--yellow)">${esc(l.key||'—')}</td>
+      <td>${fileCell}</td>
       <td style="font-weight:700;color:#67e8f9;font-family:'JetBrains Mono',monospace">${l.visits||0}</td>
       <td>${badge}</td>
       <td style="color:var(--text3);font-size:13px">${date}</td>
       <td>
         <div style="display:flex;gap:6px">
-          <button class="btn btn-ghost btn-sm" onclick="showIPs('${id}')">IPs${ipCnt?` (${ipCnt})`:''}</button>
-          <button class="btn btn-red btn-sm" onclick="askDelete('${id}')">✕</button>
+          <button class="btn btn-ghost btn-sm" data-id="${id}" onclick="showIPs(this.dataset.id)">IPs${ipCnt?` (${ipCnt})`:''}</button>
+          <button class="btn btn-red btn-sm" data-id="${id}" onclick="askDelete(this.dataset.id)">✕</button>
         </div>
       </td>
     </tr>`;
   }).join('');
 }
 
-// ── GENERATE ─────────────────────────────────────────────────────────────────
+// ── GENERATE ───────────────────────────────────────────────────────────────
 async function generateLink() {
-  const name = document.getElementById('gen-name').value.trim();
-  const key  = document.getElementById('gen-key').value.trim();
-  if (!name) { toast('Enter a link name!'); return; }
+  const name    = document.getElementById('gen-name').value.trim();
+  const key     = document.getElementById('gen-key').value.trim();
+  const fileId  = document.getElementById('gen-file').value;
 
-  const id   = Math.random().toString(36).substr(2,9).toUpperCase();
-  const data = { name, key, visits:0, created:Date.now(), status:'unused', ips:{}, first_ip:'' };
+  if (!name) { toast('Enter a customer name!'); return; }
+
+  const id = Math.random().toString(36).substr(2,9).toUpperCase();
+
+  // Attach file info if selected
+  let file_name = '';
+  let file_url  = '';
+  if (fileId && uploads[fileId]) {
+    file_name = uploads[fileId].name || '';
+    file_url  = uploads[fileId].url  || '';
+  }
+
+  const data = {
+    name, key, visits:0, created:Date.now(), status:'unused',
+    ips:{}, first_ip:'', file_name, file_url
+  };
 
   await fbSet(`links/${id}`, data);
   links[id] = data;
@@ -744,10 +765,113 @@ async function generateLink() {
   document.getElementById('gen-result').style.display = 'block';
   document.getElementById('gen-name').value = '';
   document.getElementById('gen-key').value  = '';
+  document.getElementById('gen-file').value = '';
   toast('✔ Link generated!');
 }
 
-// ── IP MODAL ──────────────────────────────────────────────────────────────────
+// ── UPLOAD / FILES ─────────────────────────────────────────────────────────
+async function manualAddFile() {
+  const name = document.getElementById('ul-name').value.trim();
+  const url  = document.getElementById('ul-url').value.trim();
+  if (!name) { toast('Enter a file name'); return; }
+  if (!url)  { toast('Enter a download URL'); return; }
+
+  const id   = Math.random().toString(36).substr(2,8).toUpperCase();
+  const data = { name, url, size:0, uploaded:Date.now() };
+
+  await fbSet(`uploads/${id}`, data);
+  document.getElementById('ul-name').value = '';
+  document.getElementById('ul-url').value  = '';
+  await loadUploadedFiles();
+  toast('✔ File added: ' + name);
+}
+
+async function loadUploadedFiles() {
+  const data = await fbGet('uploads');
+  uploads = data || {};
+
+  // Update the file dropdown in Generate section
+  populateFileDropdown();
+
+  const list = document.getElementById('uploaded-list');
+  const entries = Object.entries(uploads);
+
+  if (!entries.length) {
+    list.innerHTML = `<div style="color:var(--text3);font-size:14px;padding:10px 0">No files added yet. Use the form above to add a file.</div>`;
+
+    // Show warning on links page
+    document.getElementById('no-file-warn').style.display = 'block';
+    document.getElementById('active-file-bar').style.display = 'none';
+    return;
+  }
+
+  document.getElementById('no-file-warn').style.display = 'none';
+
+  // Sort newest first
+  entries.sort(([,a],[,b]) => (b.uploaded||0) - (a.uploaded||0));
+
+  list.innerHTML = entries.map(([id,f]) => `
+    <div class="file-item">
+      <span class="file-icon">${getFileIcon(f.name)}</span>
+      <span class="file-name">${esc(f.name)}</span>
+      <div style="flex:1;font-size:12px;color:#67e8f9;font-family:'JetBrains Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px">
+        ${f.url ? `<a href="${esc(f.url)}" target="_blank" style="color:inherit;text-decoration:none">${esc(f.url)}</a>` : 'No URL'}
+      </div>
+      ${f.url ? `<a href="${esc(f.url)}" target="_blank" class="btn btn-ghost btn-sm" style="text-decoration:none;white-space:nowrap">⬇ TEST</a>` : ''}
+      <button class="file-remove" data-uid="${id}" onclick="deleteUpload(this.dataset.uid)">✕</button>
+    </div>
+  `).join('');
+}
+
+function populateFileDropdown() {
+  const sel = document.getElementById('gen-file');
+  const cur = sel.value;
+
+  // Clear and rebuild options
+  sel.innerHTML = '<option value="">— No file (link only) —</option>';
+
+  const entries = Object.entries(uploads).sort(([,a],[,b]) => (b.uploaded||0) - (a.uploaded||0));
+  entries.forEach(([id,f]) => {
+    const opt = document.createElement('option');
+    opt.value = id;
+    opt.textContent = f.name;
+    sel.appendChild(opt);
+  });
+
+  // Restore previous selection if still valid
+  if (cur && uploads[cur]) sel.value = cur;
+
+  // Show active file bar if a file is selected
+  updateActiveFileBanner();
+}
+
+function updateActiveFileBanner() {
+  const sel    = document.getElementById('gen-file');
+  const fileId = sel.value;
+  const bar    = document.getElementById('active-file-bar');
+  const nameEl = document.getElementById('active-file-name');
+
+  if (fileId && uploads[fileId]) {
+    bar.style.display  = 'block';
+    nameEl.textContent = uploads[fileId].name;
+  } else {
+    bar.style.display  = 'none';
+  }
+}
+
+// Wire up dropdown change
+document.addEventListener('DOMContentLoaded', () => {
+  const sel = document.getElementById('gen-file');
+  if (sel) sel.addEventListener('change', updateActiveFileBanner);
+});
+
+async function deleteUpload(id) {
+  await fbDelete(`uploads/${id}`);
+  await loadUploadedFiles();
+  toast('File removed');
+}
+
+// ── IP MODAL ───────────────────────────────────────────────────────────────
 function showIPs(id) {
   const l = links[id];
   if (!l) return;
@@ -760,9 +884,9 @@ function showIPs(id) {
     html = `<div style="color:var(--text3);font-size:14px;padding:8px 0">No visits yet.</div>`;
   } else {
     html = entries.map(([ip, ts]) => {
-      const ipReal  = ip.replace(/_/g,'.');
-      const isSus   = firstIp && ipReal !== firstIp;
-      const time    = new Date(ts).toLocaleString();
+      const ipReal = ip.replace(/_/g,'.');
+      const isSus  = firstIp && ipReal !== firstIp;
+      const time   = new Date(ts).toLocaleString();
       return `<div class="ip-item ${isSus?'sus':'first'}">
         <div class="ip-dot ${isSus?'r':'g'}"></div>
         <span class="mono" style="flex:1">${ipReal}</span>
@@ -776,7 +900,7 @@ function showIPs(id) {
   document.getElementById('ip-modal').classList.add('open');
 }
 
-// ── DELETE ────────────────────────────────────────────────────────────────────
+// ── DELETE ─────────────────────────────────────────────────────────────────
 function askDelete(id) { deleteId = id; document.getElementById('del-modal').classList.add('open'); }
 async function confirmDelete() {
   if (!deleteId) return;
@@ -797,93 +921,7 @@ async function deleteAllLinks() {
   toast('All links deleted');
 }
 
-// ── FILE UPLOAD ───────────────────────────────────────────────────────────────
-function handleFiles(files) {
-  [...files].forEach(f => {
-    if (!pendingFiles.find(p => p.name === f.name)) pendingFiles.push(f);
-  });
-  renderPendingFiles();
-}
-
-function handleDrop(e) {
-  e.preventDefault();
-  document.getElementById('upload-zone').classList.remove('drag');
-  handleFiles(e.dataTransfer.files);
-}
-
-function renderPendingFiles() {
-  const list = document.getElementById('file-list');
-  if (!pendingFiles.length) { list.innerHTML = ''; return; }
-  list.innerHTML = pendingFiles.map((f,i) => `
-    <div class="file-item">
-      <span class="file-icon">${getFileIcon(f.name)}</span>
-      <span class="file-name">${esc(f.name)}</span>
-      <span class="file-size">${formatBytes(f.size)}</span>
-      <button class="btn btn-purple btn-sm" onclick="uploadFile(${i})">UPLOAD</button>
-      <button class="file-remove" onclick="removePending(${i})">✕</button>
-    </div>
-  `).join('');
-}
-
-async function uploadFile(idx) {
-  const f = pendingFiles[idx];
-  if (!f) return;
-  toast('Uploading ' + f.name + '...');
-
-  // Store metadata in Firebase (we can't store binary in free tier)
-  // For real file storage: use Firebase Storage or upload to a free CDN
-  const data = {
-    name: f.name,
-    size: f.size,
-    uploaded: Date.now(),
-    type: f.type,
-    note: 'Upload to Firebase Storage or provide a direct download URL below'
-  };
-
-  const id = Math.random().toString(36).substr(2,8).toUpperCase();
-
-  // Ask for direct URL (for now — Firebase Storage requires SDK setup)
-  const url = prompt(`Paste the direct download URL for "${f.name}":\n(Upload to Google Drive, Mega, etc. and paste link here)`);
-  if (url) {
-    data.url = url;
-    await fbSet(`uploads/${id}`, data);
-    pendingFiles.splice(idx, 1);
-    renderPendingFiles();
-    loadUploadedFiles();
-    toast('✔ File saved: ' + f.name);
-  }
-}
-
-function removePending(idx) {
-  pendingFiles.splice(idx, 1);
-  renderPendingFiles();
-}
-
-async function loadUploadedFiles() {
-  const data = await fbGet('uploads');
-  const list = document.getElementById('uploaded-list');
-  if (!data || !Object.keys(data).length) {
-    list.innerHTML = `<div style="color:var(--text3);font-size:14px;padding:10px 0">No files uploaded yet.</div>`;
-    return;
-  }
-  list.innerHTML = Object.entries(data).map(([id,f]) => `
-    <div class="file-item">
-      <span class="file-icon">${getFileIcon(f.name)}</span>
-      <span class="file-name">${esc(f.name)}</span>
-      <span class="file-size">${formatBytes(f.size)}</span>
-      ${f.url ? `<a href="${esc(f.url)}" target="_blank" class="btn btn-purple btn-sm" style="text-decoration:none">DOWNLOAD</a>` : '<span style="color:var(--text3);font-size:12px">No URL</span>'}
-      <button class="file-remove" onclick="deleteUpload('${id}')">✕</button>
-    </div>
-  `).join('');
-}
-
-async function deleteUpload(id) {
-  await fbDelete(`uploads/${id}`);
-  loadUploadedFiles();
-  toast('File removed');
-}
-
-// ── SETTINGS ─────────────────────────────────────────────────────────────────
+// ── SETTINGS ───────────────────────────────────────────────────────────────
 function savePass() {
   const v = document.getElementById('new-pass').value.trim();
   if (!v) { toast('Enter a new password'); return; }
@@ -899,9 +937,8 @@ function saveDiscord() {
   toast('✔ Discord link saved');
 }
 
-// ── BUYER PAGE ────────────────────────────────────────────────────────────────
+// ── BUYER PAGE ─────────────────────────────────────────────────────────────
 async function showBuyerPage(id) {
-  // Get visitor IP
   let ip = 'unknown';
   try {
     const r = await fetch('https://api.ipify.org?format=json');
@@ -935,13 +972,9 @@ async function showBuyerPage(id) {
 
   await fbPatch(`links/${id}`, { visits, status, first_ip: firstIp, ips });
 
-  // Get latest uploaded file for download
-  const uploads   = await fbGet('uploads');
-  let latestFile  = null;
-  if (uploads) {
-    const files = Object.values(uploads).sort((a,b) => (b.uploaded||0) - (a.uploaded||0));
-    if (files.length) latestFile = files[0];
-  }
+  // ── Build buyer card ───────────────────────────────────────────────────
+  const hasFile = link.file_url && link.file_url.trim() !== '';
+  _buyerKey = link.key || '';
 
   card.innerHTML = `
     <div class="buyer-logo glow-purple">SLCEP</div>
@@ -949,48 +982,35 @@ async function showBuyerPage(id) {
     <div class="buyer-sub">Your purchase is ready below</div>
 
     ${link.key ? `
-      <div style="margin-bottom:20px">
+      <div style="margin-bottom:24px">
         <div style="font-size:11px;letter-spacing:2px;color:var(--text2);margin-bottom:10px;font-weight:600">LICENSE KEY</div>
         <div class="key-box">
           <div class="key-text">${esc(link.key)}</div>
         </div><br>
-        <button class="copy-btn" style="margin-top:8px;padding:6px 18px" onclick="navigator.clipboard.writeText('${esc(link.key)}').then(()=>copyToast())">
+        <button class="copy-btn" id="copy-key-btn" style="margin-top:8px;padding:6px 18px" onclick="copyBuyerKey(this)">
           COPY KEY
         </button>
       </div>
     ` : ''}
 
-    ${latestFile && latestFile.url ? `
-      <a class="dl-btn" href="${esc(latestFile.url)}" target="_blank">
-        <span class="dl-btn-icon">⬇</span> DOWNLOAD
-      </a>
-      <div style="font-size:12px;color:var(--text3);margin-top:10px">${esc(latestFile.name)} · ${formatBytes(latestFile.size)}</div>
+    ${hasFile ? `
+      <div style="margin-top:8px">
+        <a class="dl-btn" href="${esc(link.file_url)}" target="_blank" rel="noopener">
+          <span class="dl-btn-icon">⬇</span> DOWNLOAD
+        </a>
+        <div style="font-size:12px;color:var(--text3);margin-top:10px">📎 ${esc(link.file_name || 'File')}</div>
+      </div>
     ` : `
-      <div style="color:var(--text2);font-size:14px;margin-top:16px">Download link will appear here once available.</div>
+      <div style="color:var(--text2);font-size:14px;margin-top:16px;padding:20px;background:var(--bg3);border-radius:12px;border:1px solid var(--border)">
+        Download link will appear here once available.
+      </div>
     `}
 
     <div class="buyer-footer">Made by @m0dzn_edit &nbsp;·&nbsp; SLCEP</div>
   `;
-
-  // Auto-refresh buyer page every 10s (so if admin uploads file, it updates live)
-  setInterval(async () => {
-    const fresh = await fbGet('uploads');
-    if (!fresh) return;
-    const files = Object.values(fresh).sort((a,b) => (b.uploaded||0) - (a.uploaded||0));
-    if (!files.length || !files[0].url) return;
-    const f = files[0];
-    const dlArea = card.querySelector('.dl-btn');
-    // Only update if no download button yet
-    if (!dlArea) {
-      const p = card.querySelector('[data-dl-placeholder]');
-      if (p) p.innerHTML = `<a class="dl-btn" href="${esc(f.url)}" target="_blank"><span class="dl-btn-icon">⬇</span> DOWNLOAD</a>`;
-    }
-  }, 10000);
 }
 
-function copyToast() { toast('✔ Key copied!'); }
-
-// ── UTILS ─────────────────────────────────────────────────────────────────────
+// ── UTILS ──────────────────────────────────────────────────────────────────
 function esc(s) {
   return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
@@ -1005,10 +1025,17 @@ function toast(msg, dur=2500) {
 }
 function closeModal(id) { document.getElementById(id).classList.remove('open'); }
 function formatBytes(b) {
-  if (!b) return '0 B';
+  if (!b) return '';
   if (b < 1024) return b + ' B';
   if (b < 1048576) return (b/1024).toFixed(1) + ' KB';
   return (b/1048576).toFixed(1) + ' MB';
+}
+function copyBuyerKey(btn) {
+  if (!_buyerKey) return;
+  navigator.clipboard.writeText(_buyerKey).then(() => {
+    btn.textContent = '✔ COPIED';
+    setTimeout(() => btn.textContent = 'COPY KEY', 1500);
+  }).catch(() => {});
 }
 function getFileIcon(name) {
   const ext = (name||'').split('.').pop().toLowerCase();
