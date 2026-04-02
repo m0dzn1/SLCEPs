@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SLCEP Dashboard Panel</title>
+<title>SCEP Dashboard Panel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -145,8 +145,8 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 
 <div id="login">
   <div class="login-card">
-    <div class="login-logo glow-purple">SLCEP</div>
-    <div class="login-sub">LINK DASHBOARD · ANTI LEAK</div>
+    <div class="login-logo glow-purple">SCEP</div>
+    <div class="login-sub">SCEP DASHBOARD</div>
     <div class="field-label">PASSWORD</div>
     <input class="inp" type="password" id="login-pass" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')doLogin()">
     <button class="btn-login" onclick="doLogin()">ACCESS DASHBOARD</button>
@@ -157,7 +157,7 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 <div id="dashboard">
   <div class="layout">
     <div class="sidebar">
-      <div class="sidebar-logo glow-purple">SLCEP</div>
+      <div class="sidebar-logo glow-purple">SCEP</div>
       <div class="nav-label">MAIN</div>
       <div class="nav-item active" onclick="showPage('links',this)"><span class="nav-icon">⬡</span> Links</div>
       <div class="nav-item" onclick="showPage('upload',this)"><span class="nav-icon">⬆</span> Upload File</div>
@@ -195,7 +195,7 @@ tr:hover td{background:rgba(255,255,255,0.015)}
             </div>
             <div class="field">
               <div class="field-lbl">LICENSE KEY <span style="color:var(--text3);font-weight:400;letter-spacing:0">(optional)</span></div>
-              <input class="inp-sm" id="gen-key" type="text" placeholder="SLCEP-XXXX-XXXX-XXXX-XXXX">
+              <input class="inp-sm" id="gen-key" type="text" placeholder="SCEP-XXXX-XXXX-XXXX-XXXX">
             </div>
             <div class="field">
               <div class="field-lbl">ATTACH FILE <span style="color:var(--text3);font-weight:400;letter-spacing:0">(optional)</span></div>
@@ -237,7 +237,7 @@ tr:hover td{background:rgba(255,255,255,0.015)}
           <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;margin-bottom:20px">
             <div class="field">
               <div class="field-lbl">FILE NAME</div>
-              <input class="inp-sm" id="ul-name" type="text" placeholder="e.g. SLCEP_Setup.exe">
+              <input class="inp-sm" id="ul-name" type="text" placeholder="e.g. SCEP_Setup.exe">
             </div>
             <div class="field">
               <div class="field-lbl">DIRECT DOWNLOAD URL</div>
@@ -303,7 +303,7 @@ tr:hover td{background:rgba(255,255,255,0.015)}
 <!-- BUYER PAGE -->
 <div id="link-view">
   <div class="buyer-card" id="buyer-card">
-    <div class="buyer-logo glow-purple">SLCEP</div>
+    <div class="buyer-logo glow-purple">SCEP</div>
     <div style="font-size:40px;margin-bottom:16px">⏳</div>
     <div class="buyer-name">Loading...</div>
   </div>
@@ -384,7 +384,6 @@ function showPage(name, el) {
 }
 
 // ── FIREBASE ─────────────────────────────────────────────────────────────────
-// All requests include ?auth=TOKEN to fix 401 Unauthorized errors
 function fbUrl(path) {
   return `${FB}/${path}.json?auth=${FB_TOKEN}`;
 }
@@ -514,7 +513,6 @@ async function manualAddFile() {
     return;
   }
 
-  // Update local state immediately — no need to wait for next poll
   uploads[id] = data;
   document.getElementById('ul-name').value = '';
   document.getElementById('ul-url').value  = '';
@@ -530,7 +528,6 @@ async function loadUploadedFiles() {
   renderUploadedList();
 }
 
-// Separated from loadUploadedFiles so it can be called without a Firebase fetch
 function renderUploadedList() {
   const list    = document.getElementById('uploaded-list');
   const entries = Object.entries(uploads);
@@ -642,7 +639,7 @@ async function showBuyerPage(id) {
   try { const j=await(await fetch('https://api.ipify.org?format=json')).json(); ip=j.ip; } catch {}
   const link=await fbGet(`links/${id}`), card=document.getElementById('buyer-card');
   if (!link) {
-    card.innerHTML=`<div class="buyer-logo glow-purple">SLCEP</div><div style="font-size:48px;margin-bottom:16px">🔒</div><div class="buyer-name" style="color:var(--red)">Invalid Link</div><div class="buyer-sub">This link does not exist or has been removed.</div><div class="buyer-footer">Made by @m0dzn_edit</div>`;
+    card.innerHTML=`<div class="buyer-logo glow-purple">SCEP</div><div style="font-size:48px;margin-bottom:16px">🔒</div><div class="buyer-name" style="color:var(--red)">Invalid Link</div><div class="buyer-sub">This link does not exist or has been removed.</div><div class="buyer-footer">Made by @m0dzn_edit</div>`;
     return;
   }
   const visits=(link.visits||0)+1, firstIp=link.first_ip||ip, ipKey=ip.replace(/\./g,'_'), ips=link.ips||{};
@@ -653,7 +650,7 @@ async function showBuyerPage(id) {
   const hasFile=link.file_url&&link.file_url.trim()!=='';
   _buyerKey=link.key||'';
   card.innerHTML=`
-    <div class="buyer-logo glow-purple">SLCEP</div>
+    <div class="buyer-logo glow-purple">SCEP</div>
     <div class="buyer-name">${esc(link.name)}</div>
     <div class="buyer-sub">Your purchase is ready below</div>
     ${link.key?`<div style="margin-bottom:24px">
@@ -665,7 +662,7 @@ async function showBuyerPage(id) {
       <a class="dl-btn" href="${esc(link.file_url)}" target="_blank" rel="noopener">⬇ DOWNLOAD</a>
       <div style="font-size:12px;color:var(--text3);margin-top:10px">📎 ${esc(link.file_name||'File')}</div>
     </div>`:`<div style="color:var(--text2);font-size:14px;margin-top:16px;padding:20px;background:var(--bg3);border-radius:12px;border:1px solid var(--border)">Download link will appear here once available.</div>`}
-    <div class="buyer-footer">Made by @m0dzn_edit · SLCEP</div>`;
+    <div class="buyer-footer">Made by @m0dzn_edit · SCEP</div>`;
 }
 
 // ── UTILS ────────────────────────────────────────────────────────────────────
